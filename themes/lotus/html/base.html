@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}{% block subtitle %}{% endblock %}</title>
+        {% block meta %}
+        <meta name="description" content="{{description}}">
+        <meta name="keywords" content="">
+        {% endblock %}
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        
+        <link rel="shortcut icon" href="images/ico/favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        {% style "css/normalize.css" %}
+        {% style "css/blog.css" %}
+        {% style "css/lotus-highlightjs.min.css" %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/clojure.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/plaintext.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="{{title}}" href="{{index-uri}}">
+                    <div class="title-text text desktop-and-tablet-only">
+                        <i class="desktop-and-tablet-only fa fa-table"></i>
+                        <br/><br/>
+                        {{title}}
+                    </div>
+                    <div class="title-text text mobile-only">{{title}}</div>
+                </a>
+            </div> 
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <ul class="menu">
+                        <li {% if home %} class="active" {% endif %}><a title="Home" href="{{index-uri}}"><div class="menu-item-text">Home</div></a></li>
+                        {% for nav-page in navbar-pages %}
+                        <li {%ifequal page.uri nav-page.uri %} class="active" {% endifequal %}>
+                            <a href="{{nav-page.uri}}"><div class="menu-item-text">{{nav-page.title}}</div></a>
+                        </li>
+                        {% endfor %}
+                        <li {% if archives %} class="active" {% endif %}><a title="Archives" href="{{archives-uri}}"><div class="menu-item-text">Archives</div></a></li>
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a target="_blank" title="RSS" href="{{rss-uri}}" rel="external"><i class="icon fa-solid fa-rss"></i></a></li>
+                        <li><a target="_blank" title="GitHub" href="https://github.com/clojure-finance/wejure" rel="external"><i class="icon fa-brands fa-github"></i></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            {% block content %}
+            {% endblock %}
+            <br/>
+            <div id="footercont">
+                Copyright &copy; {{today|date:yyyy}} {{author}}
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+            </div>
+        </article>
+
+        {% script "js/highlight.pack.js" %}
+        <script>hljs.initHighlightingOnLoad();</script>
+        {% script "js.dropdown.js" %} 
+        
+
+        {% if post.klipse %} {{post.klipse|safe}} {% endif %}
+        {% if page.klipse %} {{page.klipse|safe}} {% endif %}
+    </body>
+</html>
