@@ -1,0 +1,23 @@
+{% extends "/html/base.html" %}
+{%block subtitle %}: Archives{% endblock %}
+{% block content %}
+<div id="posts">
+    <div id="page-header">
+        <h1>Archives</h1>
+    </div>
+
+    The following posts document our design and implementation ideas. However, as our projects are still being updated, some of the content may be out of date.
+
+    <table>
+        <tr><th>Title</th><th>Date</th></tr>
+        {% for group in groups %}
+            {% for post in group.posts %}
+                <tr>
+                    <td><a href="{{post.uri}}">{{post.title}}</a></td>
+                    <td>{{post.date|date:"yyyy-MM-dd"}}</td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
