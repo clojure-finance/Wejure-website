@@ -1,6 +1,6 @@
 # Clojure Backtesting Documentation Website
 
-A documentation website for the Clojure backtesting framework built with Cryogen
+A documentation website for the decentralized social network that operates on a peer-to-peer network written in Clojure.
 
 Link to website: [https://clojure-finance.github.io/wejure-webiste/](https://clojure-finance.github.io/wejure-website/)
 
