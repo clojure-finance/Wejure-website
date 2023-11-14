@@ -30,7 +30,8 @@ Yarn is a package manager that also serves as a project manager. It provides fea
 IPFS is an open system that allows the management of data without relying on a central server. It uses content addressing, allowing data retrieval based on the content's fingerprint rather than its location or name. IPFS offers versatility and has applications in various industries, such as offline-native productivity tools, censorship-resistant content libraries, and efficient interplanetary communication. It provides data transparency and permanence, making it suitable for storing digital art, publishing scientific research, and recording proposals and votes in Web3 projects. IPFS is designed to reimagine the structure of the traditional web and has an active community of developers and contributors.
 
 #### configure IPFS
-`"API": {
+```
+"API": {
 		"HTTPHeaders": {
 			"Access-Control-Allow-Credentials": [
 				"true"
@@ -44,7 +45,8 @@ IPFS is an open system that allows the management of data without relying on a c
 				"*"
 			]
 		}
-	}`
+	}
+```
 
 
 
