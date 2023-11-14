@@ -6,7 +6,7 @@
 
 Welcome to Wejure! This is a a decentralized social network that operates on a peer-to-peer network developed by HKU at HKU Business School.
 
-To get started, please read our [docs](pages-output/docs) and try our [examples](pages-output/examples).
+To get started, please read our [get_start](pages-output/docs) and try our [examples](pages-output/examples).
 
 To know more about our design and implementation ideas, please read our [posts](archives).
 
