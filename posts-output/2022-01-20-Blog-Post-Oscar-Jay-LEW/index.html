@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Wejure: Using Reagent for my Web App</title>
+        
+<meta name="keywords" content="">
+
+<meta name="description" content="In the last blog, I mentioned that I was deciding between figwheel and shadow-cljs.After doing some research, I have chosen to use figwheel as my initial development tool for the web app, as it is written on the Clojure website that “figwheel-main has fewer moving parts than shadow-cljs and is therefore very simple to learn and work with”.">
+
+<meta property="og:description" content="In the last blog, I mentioned that I was deciding between figwheel and shadow-cljs.After doing some research, I have chosen to use figwheel as my initial development tool for the web app, as it is written on the Clojure website that “figwheel-main has fewer moving parts than shadow-cljs and is therefore very simple to learn and work with”.">
+
+<meta property="og:url" content="https://clojure-finance.github.io/wejure-website/wejure-website/posts-output/2022-01-20-Blog-Post-Oscar-Jay-LEW/" />
+<meta property="og:title" content="Using Reagent for my Web App" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        
+        <link rel="shortcut icon" href="images/ico/favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="/wejure-website/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/wejure-website/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/wejure-website/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/clojure.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/plaintext.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Wejure" href="/wejure-website/">
+                    <div class="title-text text desktop-and-tablet-only">
+                        <i class="desktop-and-tablet-only fa fa-table"></i>
+                        <br/><br/>
+                        Wejure
+                    </div>
+                    <div class="title-text text mobile-only">Wejure</div>
+                </a>
+            </div> 
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <ul class="menu">
+                        <li ><a title="Home" href="/wejure-website/"><div class="menu-item-text">Home</div></a></li>
+                        
+                        <li >
+                            <a href="/wejure-website/pages-output/docs/"><div class="menu-item-text">Get_start</div></a>
+                        </li>
+                        
+                        <li ><a title="Archives" href="/wejure-website/archives/"><div class="menu-item-text">Archives</div></a></li>
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a target="_blank" title="RSS" href="/wejure-website/feed.xml" rel="external"><i class="icon fa-solid fa-rss"></i></a></li>
+                        <li><a target="_blank" title="GitHub" href="https://github.com/clojure-finance/wejure" rel="external"><i class="icon fa-brands fa-github"></i></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Using Reagent for my Web App</h1>
+        <div class="byline">
+            <span class="date">2022-01-20</span>
+            
+            <span class="author">By: Oscar Jay LEW</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <p>In the last blog, I mentioned that I was deciding between figwheel and shadow-cljs.</p><p>After doing some research, I have chosen to use figwheel as my initial development tool for the web app, as it is written on the Clojure website that “figwheel-main has fewer moving parts than shadow-cljs and is therefore very simple to learn and work with”.</p><p>(<a href="https://ask.clojure.org/index.php/10403/pros-and-cons-figwheel-vs-shadowcljs">https://ask.clojure.org/index.php/10403/pros-and-cons-figwheel-vs-shadowcljs</a>)</p><p>Having decided the development tool, I moved on to finding whether there exists a React-like ClojureScript package.</p><p>In short, React is a JavaScript (JS) library that allows its users to create HTML components using simple JS code.</p><p>Citing cimplilearn, here are some of the advantages of using React:</p><ul><li><p>Easy creation of dynamic applications: React makes it easier to create dynamic web applications because it requires less coding and offers more functionality, as opposed to JavaScript, where coding often gets complex very quickly.</p></li><li><p>Improved performance: React uses Virtual DOM, thereby creating web applications faster. Virtual DOM compares the components’ previous states and updates only the items in the Real DOM that were changed, instead of updating all of the components again, as conventional web applications do.</p></li><li><p>Reusable components: Components are the building blocks of any React application, and a single app usually consists of multiple components. These components have their logic and controls, and they can be reused throughout the application, which in turn dramatically reduces the application’s development time.</p></li><li><p>Small learning curve: React is easy to learn, as it mostly combines basic HTML and JavaScript concepts with some beneficial additions.</p></li></ul><p>(<a href="https://www.simplilearn.com/tutorials/reactjs-tutorial/what-is-reactjs">https://www.simplilearn.com/tutorials/reactjs-tutorial/what-is-reactjs</a>)</p><p>It turns out that ClojureScipt has a library, Reagent that acts as an interface to React. And thus, my goals for the next two weeks are to pick up Reagent and to find a ClojureScript library that can help me interact with the Etherium blockchain.</p><p>(<a href="https://github.com/reagent-project/reagent">https://github.com/reagent-project/reagent</a>)</p>
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/wejure-website/posts-output/2022-02-03-Blog-Post-Oscar-Jay-LEW/"><i class="fa-solid fa-circle-left"></i><div class="nav-text">Switching to Shadow-Cljs</div></a>
+    
+    
+    <a class="next" href="/wejure-website/posts-output/2022-01-06-Blog-Post-Oscar-Jay-LEW/"><div class="nav-text"">A Decentralised Social Media</div><i class="fa-solid fa-circle-right"></i></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <br/>
+            <div id="footercont">
+                Copyright &copy; 2024 Wejure
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+            </div>
+        </article>
+
+        <script src="/wejure-website/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="/wejure-website/js.dropdown.js" type="application/javascript"></script> 
+        
+
+        
+        
+    </body>
+</html>

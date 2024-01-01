@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Wejure: Switching to Shadow-Cljs</title>
+        
+<meta name="keywords" content="">
+
+<meta name="description" content="Following my last blog, I have been trying to find a ClojureScript library to allows me to interact with the Etherium blockchain.The library that is mentioned the most online is cljs-web3. In addition to this, I have decided to use the MetaMask extension as a gateway to connect to the Etherium blockchain. MetaMask is a cryptocurrency wallet and a gateway to blockchains. Without this extension, we would have to manually set up the user’s cryptocurrency account.">
+
+<meta property="og:description" content="Following my last blog, I have been trying to find a ClojureScript library to allows me to interact with the Etherium blockchain.The library that is mentioned the most online is cljs-web3. In addition to this, I have decided to use the MetaMask extension as a gateway to connect to the Etherium blockchain. MetaMask is a cryptocurrency wallet and a gateway to blockchains. Without this extension, we would have to manually set up the user’s cryptocurrency account.">
+
+<meta property="og:url" content="https://clojure-finance.github.io/wejure-website/wejure-website/posts-output/2022-02-03-Blog-Post-Oscar-Jay-LEW/" />
+<meta property="og:title" content="Switching to Shadow-Cljs" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        
+        <link rel="shortcut icon" href="images/ico/favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="/wejure-website/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/wejure-website/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/wejure-website/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/clojure.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/plaintext.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="Wejure" href="/wejure-website/">
+                    <div class="title-text text desktop-and-tablet-only">
+                        <i class="desktop-and-tablet-only fa fa-table"></i>
+                        <br/><br/>
+                        Wejure
+                    </div>
+                    <div class="title-text text mobile-only">Wejure</div>
+                </a>
+            </div> 
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <ul class="menu">
+                        <li ><a title="Home" href="/wejure-website/"><div class="menu-item-text">Home</div></a></li>
+                        
+                        <li >
+                            <a href="/wejure-website/pages-output/docs/"><div class="menu-item-text">Get_start</div></a>
+                        </li>
+                        
+                        <li ><a title="Archives" href="/wejure-website/archives/"><div class="menu-item-text">Archives</div></a></li>
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a target="_blank" title="RSS" href="/wejure-website/feed.xml" rel="external"><i class="icon fa-solid fa-rss"></i></a></li>
+                        <li><a target="_blank" title="GitHub" href="https://github.com/clojure-finance/wejure" rel="external"><i class="icon fa-brands fa-github"></i></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Switching to Shadow-Cljs</h1>
+        <div class="byline">
+            <span class="date">2022-02-03</span>
+            
+            <span class="author">By: Oscar Jay LEW</span>
+            
+        </div>
+    </div>
+</div>
+<div>
+    
+    <p>Following my last blog, I have been trying to find a ClojureScript library to allows me to interact with the Etherium blockchain.</p><p>The library that is mentioned the most online is cljs-web3. In addition to this, I have decided to use the MetaMask extension as a gateway to connect to the Etherium blockchain. MetaMask is a cryptocurrency wallet and a gateway to blockchains. Without this extension, we would have to manually set up the user’s cryptocurrency account.</p><p>(<a href="https://github.com/district0x/cljs-web3">https://github.com/district0x/cljs-web3</a>)</p><p>However, as I went on to connect cljs-web3 to MetaMask, an issue arose. In 2020, MetaMask announced that they will be replacing the old API <code>window.web3</code> with a new one <code>window.ethereum</code>, but for cljs-web3, its latest update was in 2018.</p><p>(<a href="https://github.com/MetaMask/metamask-extension/issues/8077">https://github.com/MetaMask/metamask-extension/issues/8077</a>)</p><p>As most ClojureScript (CS) libraries for Web3 (JS library for connecting to Ethereum) were outdated, I had chosen a somewhat “hacky” method to access the blockchain, which was to utilize CS’s ability to directly interact with JS.</p><p>(<a href="https://lwhorton.github.io/2018/10/20/clojurescript-interop-with-javascript.html">https://lwhorton.github.io/2018/10/20/clojurescript-interop-with-javascript.html</a>)</p><p>However, accessing JS libraries using figwheel is a lot more troublesome as compared shadow-cljs. Hence, I have decided to switch to using shadow-cljs using the following template,</p><p><a href="https://github.com/lauritzsh/reagent-shadow-cljs-starter">https://github.com/lauritzsh/reagent-shadow-cljs-starter</a></p><p>To install <code>npm</code> packages in nodeJS, we would first run</p><pre><code class="clojure">npm install web3
+</code></pre><p>Then in our JS program, we would have to require it by doing</p><pre><code class="clojure">var web3 = require(“web3”);
+</code></pre><p>In shadow-cljs, we would follow the same installation steps, but to use it in our program, we would do</p><pre><code class="clojure">(ns my.app
+  (:require ["web3" :as react]))
+</code></pre>
+</div>
+
+<br/>
+
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/wejure-website/posts-output/2022-02-17-Blog-Post-Oscar-Jay-LEW/"><i class="fa-solid fa-circle-left"></i><div class="nav-text">Using MUI as a Framework</div></a>
+    
+    
+    <a class="next" href="/wejure-website/posts-output/2022-01-20-Blog-Post-Oscar-Jay-LEW/"><div class="nav-text"">Using Reagent for my Web App</div><i class="fa-solid fa-circle-right"></i></a>
+    
+</div>
+
+    
+
+    
+
+
+</div>
+
+            <br/>
+            <div id="footercont">
+                Copyright &copy; 2024 Wejure
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+            </div>
+        </article>
+
+        <script src="/wejure-website/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="/wejure-website/js.dropdown.js" type="application/javascript"></script> 
+        
+
+        
+        
+    </body>
+</html>
