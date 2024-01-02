@@ -12,7 +12,7 @@ jobs:
       - name: Deploy
         uses: clojure-finance/cryogen-action@v2
         with:
-          folder: public/wejure-website
+          folder: public/Wejure-website
           java-version: '11' # optional
           java-distribution: 'liberica' # optional
           lein-version: 2.10.0 # optional
