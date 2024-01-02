@@ -2,7 +2,7 @@
 
 A documentation website for the decentralized social network that operates on a peer-to-peer network written in Clojure.
 
-Link to website: [https://clojure-finance.github.io/wejure-webiste/](https://clojure-finance.github.io/wejure-website/)
+Link to website: [https://hkuzxc.github.io/wejure-webiste/](https://hkuzxc.github.io/wejure-website/)
 
 ### Requirements
 
