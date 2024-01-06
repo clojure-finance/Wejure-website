@@ -16,10 +16,6 @@ The following software are needed:
 - [Java SDK](https://adoptium.net/) 
 - [InterPlanetary File System (IPFS)](https://ipfs.tech/)
 
-Before running WeJure, run `yarn` to download all the dependencies and go setting of IPFS to change the configure file.
-
-To run or configure WeJure on your local environment, first navigate to `src/wejure/js` in terminal and run `node relay` to start a relay server for synchronizing data in gunDB. Next, run a local IPFS client to host IPFS. In the root directory, start a local server by the command `yarn dev`. Then visit [localhost:8020](http://localhost:8020).
-
 ### Node.js
 Node.js is an open-source, cross-platform JavaScript runtime environment. It allows developers to run JavaScript code outside of a web browser, making it suitable for server-side and networking applications. You can download different versions of Node.js from the website, including the LTS (Long-Term Support) version recommended for most users.
 
@@ -29,24 +25,6 @@ Yarn is a package manager that also serves as a project manager. It provides fea
 ### IPFS
 IPFS is an open system that allows the management of data without relying on a central server. It uses content addressing, allowing data retrieval based on the content's fingerprint rather than its location or name. IPFS offers versatility and has applications in various industries, such as offline-native productivity tools, censorship-resistant content libraries, and efficient interplanetary communication. It provides data transparency and permanence, making it suitable for storing digital art, publishing scientific research, and recording proposals and votes in Web3 projects. IPFS is designed to reimagine the structure of the traditional web and has an active community of developers and contributors.
 
-#### configure IPFS
-```
-"API": {
-		"HTTPHeaders": {
-			"Access-Control-Allow-Credentials": [
-				"true"
-			],
-			"Access-Control-Allow-Methods": [
-				"PUT",
-				"POST",
-				"GET"
-			],
-			"Access-Control-Allow-Origin": [
-				"*"
-			]
-		}
-	}
-```
 
 
 
