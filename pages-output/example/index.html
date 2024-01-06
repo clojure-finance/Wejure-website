@@ -2,16 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Wejure: A Decentralised Social Media</title>
+        <title>Wejure: Step by Step Guide</title>
         
-<meta name="keywords" content="">
 
-<meta name="description" content="I have started my project on the 23rd of December and the goals for past two weeks were to conduct research on my topic which is decentralized social media and to learn about Clojure.As I have chosen to use blockchain to implement my project idea, I had to decide on which blockchain to use. After conducting research, I have decided to build my decentralized application (dApp) on top of Ethereum as it is one of the largest blockchains and it supports smart contracts. Although bitcoin also supports smart contracts, it was built with the intention of being an alternative to national currencies. Whereas for Ethereum, it was built for the purpose of facilitating programmatic contracts and applications, as according to Investopedia. As such, Ethereum has a stronger and more mature foundation on smart contracts.">
+<meta name="description" content="Verify installation of the required software">
 
-<meta property="og:description" content="I have started my project on the 23rd of December and the goals for past two weeks were to conduct research on my topic which is decentralized social media and to learn about Clojure.As I have chosen to use blockchain to implement my project idea, I had to decide on which blockchain to use. After conducting research, I have decided to build my decentralized application (dApp) on top of Ethereum as it is one of the largest blockchains and it supports smart contracts. Although bitcoin also supports smart contracts, it was built with the intention of being an alternative to national currencies. Whereas for Ethereum, it was built for the purpose of facilitating programmatic contracts and applications, as according to Investopedia. As such, Ethereum has a stronger and more mature foundation on smart contracts.">
+<meta property="og:description" content="Verify installation of the required software">
 
-<meta property="og:url" content="https://clojure-finance.github.io/wejure-website/Wejure-website/posts-output/2022-01-06-Blog-Post-Oscar-Jay-LEW/" />
-<meta property="og:title" content="A Decentralised Social Media" />
+<meta property="og:url" content="https://clojure-finance.github.io/wejure-website/Wejure-website/pages-output/example/" />
+<meta property="og:title" content="Step by Step Guide" />
 <meta property="og:type" content="article" />
 
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -52,7 +51,7 @@
                             <a href="/Wejure-website/pages-output/docs/"><div class="menu-item-text">Get_start</div></a>
                         </li>
                         
-                        <li >
+                        <li  class="active" >
                             <a href="/Wejure-website/pages-output/example/"><div class="menu-item-text">Step by Step Guide</div></a>
                         </li>
                         
@@ -71,30 +70,48 @@
 
         <article id="main">
             
-<div id="post">
-    <div class="post-header">
-    <div id="post-meta">
-        <h1>A Decentralised Social Media</h1>
-        <div class="byline">
-            <span class="date">2022-01-06</span>
-            
-            <span class="author">By: Oscar Jay LEW</span>
-            
-        </div>
+<div id="custom-page">
+    <div id="page-header">
+        <h1>Step by Step Guide</h1>
     </div>
-</div>
-<div>
     
-    <p>I have started my project on the 23rd of December and the goals for past two weeks were to conduct research on my topic which is decentralized social media and to learn about Clojure.</p><p>As I have chosen to use blockchain to implement my project idea, I had to decide on which blockchain to use. After conducting research, I have decided to build my decentralized application (dApp) on top of Ethereum as it is one of the largest blockchains and it supports smart contracts. Although bitcoin also supports smart contracts, it was built with the intention of being an alternative to national currencies. Whereas for Ethereum, it was built for the purpose of facilitating programmatic contracts and applications, as according to Investopedia. As such, Ethereum has a stronger and more mature foundation on smart contracts.</p><p>In addition, it is expected that Ethereum will receive an upgrade in 2022 which will reduce energy consumption by as much as 99.9% as well as raise the number of transactions per second.</p><p>In term of the research on Clojure, I have decided to use ClojureScript. With ClojureScript, the source code is compiled into JavaScript which runs on the browser or Node.js.</p><p>To facilitate the coding process, I have found several possible tools which includes Leiningen, figwheel, and shadowcljs. And thus one of my goals for upcoming week is to learn more about these tools.</p>
-</div>
-
-<br/>
-
+    <h3 id="verify-installation-of-the-required-software">Verify installation of the required software</h3><pre><code>- Node.js     node -v 
+- Yarn        yarn -v
+- Java SDK    java -version
+</code></pre><p><img src="../../img/verify.png" alt="Verify" /></p><h3 id="configure-ipfs">configure IPFS</h3><p>go to setting modify the configure file</p><pre><code>"API": {
+        "HTTPHeaders": {
+            "Access-Control-Allow-Credentials": [
+                "true"
+            ],
+            "Access-Control-Allow-Methods": [
+                "PUT",
+                "POST",
+                "GET"
+            ],
+            "Access-Control-Allow-Origin": [
+                "*"
+            ]
+        }
+    }
+</code></pre><p><img src="../../img/config.png" alt="config" /></p><h3 id="download-dependencies">download dependencies</h3><pre><code>command: yarn
+output if first time:                output if already downloaded:  
+yarn install v1.22.19                yarn install v1.22.19               
+[1/4] Resolving packages...          [1/4] Resolving packages...
+[2/4] Fetching packages...           Done in 0.40s.
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+success Saved lockfile.
+Done in 10.63s.
+</code></pre><h3 id="set-up-server">set up server</h3><p>first navigate to src/wejure/js
+in terminal and run node relay to start a relay server for synchronizing data in gunDB.
+Next, run a local IPFS client to host IPFS.
+In the root directory, start a local server by the command yarn dev.
+<img src="../../img/set_up.png" alt="set_up" /></p><h3 id="visit-wejure-localhost8020">visit WeJure <a href="localhost:8020">localhost:8020</a></h3>
 
     
     <div id="prev-next">
     
-    <a class="prev" href="/Wejure-website/posts-output/2022-01-20-Blog-Post-Oscar-Jay-LEW/"><i class="fa-solid fa-circle-left"></i><div class="nav-text">Using Reagent for my Web App</div></a>
+    <a class="prev" href="/Wejure-website/pages-output/docs/"><i class="fa-solid fa-circle-left"></i><div class="nav-text">Get_start</div></a>
     
     
     <div class="next"></div>
@@ -102,9 +119,6 @@
 </div>
 
     
-
-    
-
 
 </div>
 
