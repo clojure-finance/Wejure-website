@@ -2,20 +2,20 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Wejure: Background</title>
+        <title>WeJure: Background</title>
         
 
-<meta name="description" content="DescriptionSocial networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the recent debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network that uses the the decentralized &quot;interplanetary file system&quot; (IPFS) and runs on a blockchain.">
+<meta name="description" content="DescriptionSocial networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the recent debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network in which no single server owns the data.">
 
-<meta property="og:description" content="DescriptionSocial networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the recent debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network that uses the the decentralized &quot;interplanetary file system&quot; (IPFS) and runs on a blockchain.">
+<meta property="og:description" content="DescriptionSocial networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the recent debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network in which no single server owns the data.">
 
-<meta property="og:url" content="https://clojure-finance.github.io/wejure-website/Wejure-website/pages-output/docs/" />
+<meta property="og:url" content="https://clojure-finance.github.io/Wejure-website/pages-output/docs/" />
 <meta property="og:title" content="Background" />
 <meta property="og:type" content="article" />
 
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         
-        <link rel="shortcut icon" href="images/ico/favicon.png">
+        <link rel="icon" type="image/png" href="/Wejure-website/img/favicon.png">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -32,13 +32,13 @@
     <body>
         <aside id="sidebar">
             <div id="logo">
-                <a title="Wejure" href="/Wejure-website/">
+                <a title="WeJure" href="/Wejure-website/">
                     <div class="title-text text desktop-and-tablet-only">
                         <i class="desktop-and-tablet-only fa fa-table"></i>
                         <br/><br/>
-                        Wejure
+                        WeJure
                     </div>
-                    <div class="title-text text mobile-only">Wejure</div>
+                    <div class="title-text text mobile-only">WeJure</div>
                 </a>
             </div> 
 
@@ -74,9 +74,8 @@
     <div id="page-header">
         <h1>Background</h1>
     </div>
-    <ul class="toc"><li><a href="#description">Description</a></li><li><a href="#installation">Installation</a></li><ul><li><a href="#nodejs">Node.js</a></li><li><a href="#yarn">Yarn</a></li><li><a href="#ipfs">IPFS</a></li></ul></ul>
-    <h2 id="description">Description</h2><p>Social networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the recent debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network that uses the the decentralized "interplanetary file system" (IPFS) and runs on a blockchain.</p><h2 id="installation">Installation</h2><p>WeJure is developed using <a href="https://github.com/thheller/shadow-cljs">shadow-cljs</a> (which requires node.js, yarn and Java SDK).<br />
-The following software are needed:</p><ul><li><a href="https://nodejs.org">Node.js</a></li><li><a href="https://www.yarnpkg.com">Yarn</a></li><li><a href="https://adoptium.net/">Java SDK</a></li><li><a href="https://ipfs.tech/">InterPlanetary File System (IPFS)</a></li></ul><h3 id="nodejs">Node.js</h3><p>Node.js is an open-source, cross-platform JavaScript runtime environment. It allows developers to run JavaScript code outside of a web browser, making it suitable for server-side and networking applications. You can download different versions of Node.js from the website, including the LTS (Long-Term Support) version recommended for most users.</p><h3 id="yarn">Yarn</h3><p>Yarn is a package manager that also serves as a project manager. It provides features for managing dependencies and workflows in JavaScript projects. Yarn supports workspaces, allowing you to split your project into sub-components. It emphasizes stability and guarantees that installations will continue to work in the future. Yarn is an independent open-source project that encourages innovation and provides tools to solve various development challenges.</p><h3 id="ipfs">IPFS</h3><p>IPFS is an open system that allows the management of data without relying on a central server. It uses content addressing, allowing data retrieval based on the content's fingerprint rather than its location or name. IPFS offers versatility and has applications in various industries, such as offline-native productivity tools, censorship-resistant content libraries, and efficient interplanetary communication. It provides data transparency and permanence, making it suitable for storing digital art, publishing scientific research, and recording proposals and votes in Web3 projects. IPFS is designed to reimagine the structure of the traditional web and has an active community of developers and contributors.</p>
+    <ul class="toc"><li><a href="#description">Description</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#security-and-encryption">Security and encryption</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#status">Status</a></li></ul>
+    <h2 id="description">Description</h2><p>Social networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the recent debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network in which no single server owns the data.</p><h2 id="how-it-works">How it works</h2><ul><li><strong>Data</strong> lives in <a href="https://gun.eco/">GunDB</a>, a decentralized graph database that syncs between browsers through relay servers. Users see each other's data when their browsers reach a common relay.</li><li><strong>Images</strong> are stored on the <a href="https://ipfs.tech/">InterPlanetary File System (IPFS)</a>, which addresses data by a fingerprint of its content rather than by its location.</li><li><strong>Accounts, signatures and encryption</strong> use SEA, GunDB's cryptography layer. Each user has their own key pair.</li></ul><p>The early <a href="../../archives">posts</a> describe a first design built on the Ethereum blockchain; WeJure has since moved to GunDB and IPFS.</p><h2 id="security-and-encryption">Security and encryption</h2><ul><li><strong>Direct messages</strong> are end-to-end encrypted: the two participants derive a shared secret (ECDH), and each message is encrypted with AES-GCM. Only the two participants can read it.</li><li><strong>Group chats</strong> use layers: every membership change starts a new layer with a fresh key, encrypted separately for each member. New members cannot read messages from before they joined, and removed members cannot read messages sent after they left.</li><li><strong>Public data</strong>: profiles, posts, follows, blocks and the list of who has chatted with whom are stored unencrypted.</li></ul><h2 id="requirements">Requirements</h2><p>WeJure is built with <a href="https://github.com/thheller/shadow-cljs">shadow-cljs</a>. The following software is needed:</p><ul><li><a href="https://nodejs.org">Node.js</a></li><li><a href="https://yarnpkg.com">Yarn</a> 1.x</li><li><a href="https://adoptium.net/">Java SDK</a> 21 or newer</li><li>an <a href="https://ipfs.tech/">IPFS</a> node (<a href="https://github.com/ipfs/kubo">Kubo</a>)</li></ul><p>The setup scripts in the <a href="../example">Step by Step Guide</a> install all of them except Java.</p><h2 id="status">Status</h2><p>WeJure is still under development.</p><ul><li>Group chat is implemented in the GunDB layer, but the chat page has no user interface for groups yet.</li><li>Unblocking a user has no user interface yet.</li></ul><p>The <a href="https://github.com/clojure-finance/WeJure#readme">WeJure README</a> documents the data model and the code layout.</p>
 
     
     <div id="prev-next">
@@ -94,14 +93,13 @@ The following software are needed:</p><ul><li><a href="https://nodejs.org">Node.
 
             <br/>
             <div id="footercont">
-                Copyright &copy; 2026 Wejure
+                Copyright &copy; 2026 WeJure
                 <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
             </div>
         </article>
 
         <script src="/Wejure-website/js/highlight.pack.js" type="application/javascript"></script>
         <script>hljs.initHighlightingOnLoad();</script>
-        <script src="/Wejure-website/js.dropdown.js" type="application/javascript"></script> 
         
 
         

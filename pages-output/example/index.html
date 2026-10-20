@@ -2,20 +2,20 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Wejure: Step by Step Guide</title>
+        <title>WeJure: Step by Step Guide</title>
         
 
-<meta name="description" content="Verify installation of the required software">
+<meta name="description" content="Get the code">
 
-<meta property="og:description" content="Verify installation of the required software">
+<meta property="og:description" content="Get the code">
 
-<meta property="og:url" content="https://clojure-finance.github.io/wejure-website/Wejure-website/pages-output/example/" />
+<meta property="og:url" content="https://clojure-finance.github.io/Wejure-website/pages-output/example/" />
 <meta property="og:title" content="Step by Step Guide" />
 <meta property="og:type" content="article" />
 
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         
-        <link rel="shortcut icon" href="images/ico/favicon.png">
+        <link rel="icon" type="image/png" href="/Wejure-website/img/favicon.png">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -32,13 +32,13 @@
     <body>
         <aside id="sidebar">
             <div id="logo">
-                <a title="Wejure" href="/Wejure-website/">
+                <a title="WeJure" href="/Wejure-website/">
                     <div class="title-text text desktop-and-tablet-only">
                         <i class="desktop-and-tablet-only fa fa-table"></i>
                         <br/><br/>
-                        Wejure
+                        WeJure
                     </div>
-                    <div class="title-text text mobile-only">Wejure</div>
+                    <div class="title-text text mobile-only">WeJure</div>
                 </a>
             </div> 
 
@@ -74,39 +74,20 @@
     <div id="page-header">
         <h1>Step by Step Guide</h1>
     </div>
-    
-    <h3 id="verify-installation-of-the-required-software">Verify installation of the required software</h3><pre><code>- Node.js     node -v 
-- Yarn        yarn -v
-- Java SDK    java -version
-</code></pre><p><img src="../../img/verify.png" alt="Verify" /></p><h3 id="configure-ipfs">configure IPFS</h3><p>go to setting modify the configure file</p><pre><code>"API": {
-        "HTTPHeaders": {
-            "Access-Control-Allow-Credentials": [
-                "true"
-            ],
-            "Access-Control-Allow-Methods": [
-                "PUT",
-                "POST",
-                "GET"
-            ],
-            "Access-Control-Allow-Origin": [
-                "*"
-            ]
-        }
-    }
-</code></pre><p><img src="../../img/config.png" alt="config" /></p><h3 id="download-dependencies">download dependencies</h3><pre><code>command: yarn
-output if first time:                output if already downloaded:  
-yarn install v1.22.19                yarn install v1.22.19               
-[1/4] Resolving packages...          [1/4] Resolving packages...
-[2/4] Fetching packages...           Done in 0.40s.
-[3/4] Linking dependencies...
-[4/4] Building fresh packages...
-success Saved lockfile.
-Done in 10.63s.
-</code></pre><h3 id="set-up-server">set up server</h3><p>first navigate to src/wejure/js
-in terminal and run node relay to start a relay server for synchronizing data in gunDB.
-Next, run a local IPFS client to host IPFS.
-In the root directory, start a local server by the command yarn dev.
-<img src="../../img/set_up.png" alt="set_up" /></p><h3 id="visit-wejure-localhost8020">visit WeJure <a href="localhost:8020">localhost:8020</a></h3>
+    <ul class="toc"><li><a href="#get-the-code">Get the code</a></li><li><a href="#first-time-setup">First-time setup</a></li><li><a href="#configure-ipfs-by-hand-optional">Configure IPFS by hand (optional)</a></li><li><a href="#run-wejure">Run WeJure</a></li><li><a href="#visit-wejure">Visit WeJure</a></li><li><a href="#use-wejure-on-more-than-one-machine">Use WeJure on more than one machine</a></li><li><a href="#delete-all-data">Delete all data</a></li></ul>
+    <h3 id="get-the-code">Get the code</h3><pre><code>git clone https://github.com/clojure-finance/WeJure.git
+cd WeJure
+</code></pre><h3 id="first-time-setup">First-time setup</h3><p>The setup scripts install the requirements (Node.js, Yarn, IPFS), initialize IPFS and download the dependencies.</p><p><strong>macOS</strong></p><pre><code>./WejureStartup.sh
+</code></pre><p><strong>Linux</strong></p><pre><code>./setup_wejure_linux.sh
+</code></pre><p><strong>Windows</strong> (PowerShell)</p><pre><code>Set-ExecutionPolicy RemoteSigned -Scope Process
+.\WeJureWinStart.ps1
+</code></pre><p>The scripts do not install Java. Check that a Java SDK 21 or newer is installed:</p><pre><code>java -version
+</code></pre><h3 id="configure-ipfs-by-hand-optional">Configure IPFS by hand (optional)</h3><p>The setup scripts already do this. If you set up IPFS yourself, allow the WeJure page to call the IPFS API:</p><pre><code>ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://localhost:8020", "http://localhost:5001", "https://webui.ipfs.io"]'
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "POST"]'
+</code></pre><p>WeJure uploads images through the IPFS API on port 5001 and loads them from the gateway on port 8080. If the API listens elsewhere, run:</p><pre><code>ipfs config Addresses.API /ip4/127.0.0.1/tcp/5001
+</code></pre><h3 id="run-wejure">Run WeJure</h3><p><strong>macOS and Linux</strong></p><pre><code>./WejureRun.sh
+</code></pre><p><strong>Windows</strong> (PowerShell)</p><pre><code>.\WeJureWinRun.ps1
+</code></pre><p>The scripts start three processes, which can also be started by hand, each in its own terminal:</p><ol><li>the IPFS daemon: <code>ipfs daemon</code></li><li>the GunDB relay, which synchronizes data between browsers: <code>cd src/wejure/js &amp;&amp; node relay</code></li><li>the development server: <code>yarn dev</code></li></ol><p><img src="../../img/set_up.png" alt="set_up" /></p><h3 id="visit-wejure">Visit WeJure</h3><p>Open <a href="http://localhost:8020">http://localhost:8020</a> once the build has finished.</p><p><img src="../../img/visit.png" alt="visit" /></p><h3 id="use-wejure-on-more-than-one-machine">Use WeJure on more than one machine</h3><p>Users only see each other's data when their browsers reach a common relay. To connect several machines, run the relay on a host they can all reach (for example <code>HOST=0.0.0.0 node relay</code>) and add its URL to <code>peers</code> in <code>src/wejure/js/db.js</code>.</p><h3 id="delete-all-data">Delete all data</h3><ol><li>Clear the site data (local storage) in every browser that opened WeJure.</li><li>Stop the relay and run <code>./remove_local_gun.sh</code>, which deletes <code>src/wejure/js/radata</code>.</li></ol>
 
     
     <div id="prev-next">
@@ -124,14 +105,13 @@ In the root directory, start a local server by the command yarn dev.
 
             <br/>
             <div id="footercont">
-                Copyright &copy; 2026 Wejure
+                Copyright &copy; 2026 WeJure
                 <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
             </div>
         </article>
 
         <script src="/Wejure-website/js/highlight.pack.js" type="application/javascript"></script>
         <script>hljs.initHighlightingOnLoad();</script>
-        <script src="/Wejure-website/js.dropdown.js" type="application/javascript"></script> 
         
 
         
