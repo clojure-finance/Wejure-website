@@ -5,45 +5,39 @@
         <title>WeJure: Background</title>
         
 
-<meta name="description" content="DescriptionSocial networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network in which no single server owns the data.">
+<meta name="description" content="Why WeJureSocial networks such as Twitter, Facebook or Instagram are centralized: a single company runs them and stores all user data and content. That makes storage easy, but the data ends up belonging to the company rather than to its users, as the debate about content moderation shows. WeJure explores the alternative: a social network in which no single server owns the data.">
 
-<meta property="og:description" content="DescriptionSocial networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network in which no single server owns the data.">
+<meta property="og:description" content="Why WeJureSocial networks such as Twitter, Facebook or Instagram are centralized: a single company runs them and stores all user data and content. That makes storage easy, but the data ends up belonging to the company rather than to its users, as the debate about content moderation shows. WeJure explores the alternative: a social network in which no single server owns the data.">
 
 <meta property="og:url" content="https://clojure-finance.github.io/Wejure-website/pages-output/docs/" />
 <meta property="og:title" content="Background" />
 <meta property="og:type" content="article" />
 
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="icon" type="image/png" href="/Wejure-website/img/favicon.png">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
         <link href="/Wejure-website/css/normalize.css" rel="stylesheet" type="text/css" />
         <link href="/Wejure-website/css/blog.css" rel="stylesheet" type="text/css" />
-        <link href="/Wejure-website/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/clojure.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/plaintext.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="/Wejure-website/css/wejure.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <aside id="sidebar">
             <div id="logo">
                 <a title="WeJure" href="/Wejure-website/">
-                    <div class="title-text text desktop-and-tablet-only">
-                        <i class="desktop-and-tablet-only fa fa-table"></i>
-                        <br/><br/>
-                        WeJure
-                    </div>
+                    <img class="logo-image desktop-and-tablet-only" src="/Wejure-website/img/logo_white.png" alt="WeJure">
                     <div class="title-text text mobile-only">WeJure</div>
                 </a>
-            </div> 
+            </div>
 
             <nav id="sidebar-links">
                 <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <i class="fa-solid fa-bars"></i><span class="menu-text">Menu</span>
+                    </label>
                     <ul class="menu">
                         <li ><a title="Home" href="/Wejure-website/"><div class="menu-item-text">Home</div></a></li>
                         
@@ -52,7 +46,7 @@
                         </li>
                         
                         <li >
-                            <a href="/Wejure-website/pages-output/example/"><div class="menu-item-text">Step by Step Guide</div></a>
+                            <a href="/Wejure-website/pages-output/example/"><div class="menu-item-text">Getting Started</div></a>
                         </li>
                         
                         <li >
@@ -64,7 +58,7 @@
 
                 <nav id="socialmedia">
                     <ul>
-                        <li><a target="_blank" title="GitHub" href="https://github.com/clojure-finance/wejure" rel="external"><i class="icon fa-brands fa-github"></i></a></li>
+                        <li><a target="_blank" title="WeJure on GitHub" href="https://github.com/clojure-finance/WeJure" rel="external"><i class="icon fa-brands fa-github"></i></a></li>
                     </ul>
                 </nav>
             </nav>
@@ -76,8 +70,8 @@
     <div id="page-header">
         <h1>Background</h1>
     </div>
-    <ul class="toc"><li><a href="#description">Description</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#security-and-encryption">Security and encryption</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#status-and-limitations">Status and limitations</a></li></ul>
-    <h2 id="description">Description</h2><p>Social networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network in which no single server owns the data.</p><h2 id="how-it-works">How it works</h2><ul><li><strong>Data</strong> lives in <a href="https://gun.eco/">GunDB</a>, a decentralized graph database that syncs between browsers through relay servers. Users see each other's data when their browsers reach a common relay.</li><li><strong>Images</strong> are stored on the <a href="https://ipfs.tech/">InterPlanetary File System (IPFS)</a>, which addresses data by a fingerprint of its content rather than by its location.</li><li><strong>Accounts, signatures and encryption</strong> use SEA, GunDB's cryptography layer. Each user has their own key pair.</li></ul><h2 id="security-and-encryption">Security and encryption</h2><ul><li><strong>Direct messages</strong> are end-to-end encrypted: the two participants derive a shared secret (ECDH), and each message is encrypted with AES-GCM. Only the two participants can read it.</li><li><strong>Group chats</strong> use layers: every membership change starts a new layer with a fresh key, encrypted separately for each member. New members cannot read messages from before they joined, and removed members cannot read messages sent after they left.</li><li><strong>Public data</strong>: profiles, posts, follows, blocks and the list of who has chatted with whom are stored unencrypted.</li></ul><h2 id="requirements">Requirements</h2><p>WeJure is built with <a href="https://github.com/thheller/shadow-cljs">shadow-cljs</a>. The following software is needed:</p><ul><li><a href="https://nodejs.org">Node.js</a></li><li><a href="https://yarnpkg.com">Yarn</a> 1.x</li><li><a href="https://adoptium.net/">Java SDK</a> 21 or newer</li><li>an <a href="https://ipfs.tech/">IPFS</a> node (<a href="https://github.com/ipfs/kubo">Kubo</a>)</li></ul><p>The setup scripts in the <a href="../example">Step by Step Guide</a> install all of them except Java.</p><h2 id="status-and-limitations">Status and limitations</h2><p>WeJure is still under development.</p><ul><li>Group chat is implemented in the GunDB layer, but the chat page has no user interface for groups yet.</li><li>Unblocking a user has no user interface yet.</li><li>A forgotten password cannot be reset, and there is no way to change your password, username or profile picture.</li><li>You are logged in per browser tab: a new tab needs a new login, and closing the tab logs you out.</li><li>Deleting a post removes it from WeJure, but its image stays on IPFS.</li><li>Users only see each other's data when their browsers reach a common relay (see the <a href="../example/#use-wejure-on-more-than-one-machine">Step by Step Guide</a>).</li></ul><p>The <a href="https://github.com/clojure-finance/WeJure#readme">WeJure README</a> documents the data model and the code layout.</p>
+    <ul class="toc"><li><a href="#why-wejure">Why WeJure</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#privacy-and-encryption">Privacy and encryption</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#status-and-limitations">Status and limitations</a></li></ul>
+    <h2 id="why-wejure">Why WeJure</h2><p>Social networks such as Twitter, Facebook or Instagram are centralized: a single company runs them and stores all user data and content. That makes storage easy, but the data ends up belonging to the company rather than to its users, as the debate about content moderation shows. WeJure explores the alternative: a social network in which no single server owns the data.</p><h2 id="how-it-works">How it works</h2><ul><li><strong>Data</strong> lives in <a href="https://gun.eco/">GunDB</a>, a decentralized graph database that syncs between browsers through relay servers. Users see each other's data when their browsers reach a common relay.</li><li><strong>Images</strong> are stored on the <a href="https://ipfs.tech/">InterPlanetary File System (IPFS)</a>, which addresses data by a fingerprint of its content rather than by its location.</li><li><strong>Accounts, signatures and encryption</strong> use SEA, GunDB's cryptography layer. Each user has their own key pair.</li></ul><h2 id="privacy-and-encryption">Privacy and encryption</h2><ul><li><strong>Direct messages</strong> are end-to-end encrypted: the two participants derive a shared secret (ECDH), and each message is encrypted with AES-GCM. Only the two participants can read it.</li><li><strong>Group chats</strong> use layers: every membership change starts a new layer with a fresh key, encrypted separately for each member. New members cannot read messages from before they joined, and removed members cannot read messages sent after they left.</li><li><strong>Public data</strong>: profiles, posts, follows, blocks and the list of who has chatted with whom are stored unencrypted.</li></ul><h2 id="requirements">Requirements</h2><p>WeJure is built with <a href="https://github.com/thheller/shadow-cljs">shadow-cljs</a> and needs:</p><ul><li><a href="https://nodejs.org">Node.js</a></li><li><a href="https://yarnpkg.com">Yarn</a> 1.x</li><li><a href="https://adoptium.net/">Java SDK</a> 21 or newer</li><li>an <a href="https://ipfs.tech/">IPFS</a> node (<a href="https://github.com/ipfs/kubo">Kubo</a>)</li></ul><p>The setup scripts in <a href="../example/">Getting Started</a> install all of them except Java.</p><h2 id="status-and-limitations">Status and limitations</h2><p>WeJure is still under development.</p><ul><li>Group chat is implemented in the GunDB layer, but the chat page has no user interface for groups yet.</li><li>Unblocking a user has no user interface yet.</li><li>A forgotten password cannot be reset, and there is no way to change your password, username or profile picture.</li><li>You are logged in per browser tab: a new tab needs a new login, and closing the tab logs you out.</li><li>Deleting a post removes it from WeJure, but its image stays on IPFS.</li><li>Users only see each other's data when their browsers reach a common relay (see <a href="../example/#use-wejure-on-more-than-one-machine">Getting Started</a>).</li></ul><p>The <a href="https://github.com/clojure-finance/WeJure#readme">WeJure README</a> documents the data model and the code layout.</p>
 
     
     <div id="prev-next">
@@ -85,7 +79,7 @@
     <div class="prev"></div>
     
     
-    <a class="next" href="/Wejure-website/pages-output/example/"><div class="nav-text"">Step by Step Guide</div><i class="fa-solid fa-circle-right"></i></a>
+    <a class="next" href="/Wejure-website/pages-output/example/"><div class="nav-text">Getting Started</div><i class="fa-solid fa-circle-right"></i></a>
     
 </div>
 
@@ -93,16 +87,14 @@
 
 </div>
 
-            <br/>
-            <div id="footercont">
-                Copyright &copy; 2026 WeJure
-                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
-            </div>
+            <footer id="footercont">
+                &copy; 2026 WeJure &middot; Built with <a href="http://cryogenweb.org">Cryogen</a>
+            </footer>
         </article>
 
-        <script src="/Wejure-website/js/highlight.pack.js" type="application/javascript"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/powershell.min.js"></script>
+        <script src="/Wejure-website/js/site.js" type="application/javascript"></script>
 
         
         

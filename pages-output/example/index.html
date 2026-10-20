@@ -2,48 +2,42 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>WeJure: Step by Step Guide</title>
+        <title>WeJure: Getting Started</title>
         
 
-<meta name="description" content="Get the code">
+<meta name="description" content="WeJure runs on your own machine: an IPFS node stores the images, a small relay server syncs the data, and the app itself is served at http://localhost:8020. Setup scripts for macOS, Linux and Windows do most of the work.Get the code">
 
-<meta property="og:description" content="Get the code">
+<meta property="og:description" content="WeJure runs on your own machine: an IPFS node stores the images, a small relay server syncs the data, and the app itself is served at http://localhost:8020. Setup scripts for macOS, Linux and Windows do most of the work.Get the code">
 
 <meta property="og:url" content="https://clojure-finance.github.io/Wejure-website/pages-output/example/" />
-<meta property="og:title" content="Step by Step Guide" />
+<meta property="og:title" content="Getting Started" />
 <meta property="og:type" content="article" />
 
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="icon" type="image/png" href="/Wejure-website/img/favicon.png">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
         <link href="/Wejure-website/css/normalize.css" rel="stylesheet" type="text/css" />
         <link href="/Wejure-website/css/blog.css" rel="stylesheet" type="text/css" />
-        <link href="/Wejure-website/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/clojure.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/plaintext.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="/Wejure-website/css/wejure.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <aside id="sidebar">
             <div id="logo">
                 <a title="WeJure" href="/Wejure-website/">
-                    <div class="title-text text desktop-and-tablet-only">
-                        <i class="desktop-and-tablet-only fa fa-table"></i>
-                        <br/><br/>
-                        WeJure
-                    </div>
+                    <img class="logo-image desktop-and-tablet-only" src="/Wejure-website/img/logo_white.png" alt="WeJure">
                     <div class="title-text text mobile-only">WeJure</div>
                 </a>
-            </div> 
+            </div>
 
             <nav id="sidebar-links">
                 <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <i class="fa-solid fa-bars"></i><span class="menu-text">Menu</span>
+                    </label>
                     <ul class="menu">
                         <li ><a title="Home" href="/Wejure-website/"><div class="menu-item-text">Home</div></a></li>
                         
@@ -52,7 +46,7 @@
                         </li>
                         
                         <li  class="active" >
-                            <a href="/Wejure-website/pages-output/example/"><div class="menu-item-text">Step by Step Guide</div></a>
+                            <a href="/Wejure-website/pages-output/example/"><div class="menu-item-text">Getting Started</div></a>
                         </li>
                         
                         <li >
@@ -64,7 +58,7 @@
 
                 <nav id="socialmedia">
                     <ul>
-                        <li><a target="_blank" title="GitHub" href="https://github.com/clojure-finance/wejure" rel="external"><i class="icon fa-brands fa-github"></i></a></li>
+                        <li><a target="_blank" title="WeJure on GitHub" href="https://github.com/clojure-finance/WeJure" rel="external"><i class="icon fa-brands fa-github"></i></a></li>
                     </ul>
                 </nav>
             </nav>
@@ -74,25 +68,26 @@
             
 <div id="custom-page">
     <div id="page-header">
-        <h1>Step by Step Guide</h1>
+        <h1>Getting Started</h1>
     </div>
-    <ul class="toc"><li><a href="#get-the-code">Get the code</a></li><li><a href="#first-time-setup">First-time setup</a></li><li><a href="#configure-ipfs-by-hand-optional">Configure IPFS by hand (optional)</a></li><li><a href="#run-wejure">Run WeJure</a></li><li><a href="#visit-wejure">Visit WeJure</a></li><li><a href="#use-wejure-on-more-than-one-machine">Use WeJure on more than one machine</a></li><li><a href="#delete-all-data">Delete all data</a></li><li><a href="#for-developers">For developers</a></li><ul><li><a href="#production-build">Production build</a></li><li><a href="#end-to-end-tests">End-to-end tests</a></li><li><a href="#data-model-and-code-layout">Data model and code layout</a></li></ul></ul>
-    <h2 id="get-the-code">Get the code</h2><pre><code>git clone https://github.com/clojure-finance/WeJure.git
+    <ul class="toc"><li><a href="#get-the-code">Get the code</a></li><li><a href="#first-time-setup">First-time setup</a></li><li><a href="#run-wejure">Run WeJure</a></li><li><a href="#configure-ipfs-by-hand">Configure IPFS by hand</a></li><li><a href="#use-wejure-on-more-than-one-machine">Use WeJure on more than one machine</a></li><li><a href="#delete-all-data">Delete all data</a></li><li><a href="#for-developers">For developers</a></li><ul><li><a href="#production-build">Production build</a></li><li><a href="#end-to-end-tests">End-to-end tests</a></li><li><a href="#data-model-and-code-layout">Data model and code layout</a></li></ul></ul>
+    <p>WeJure runs on your own machine: an IPFS node stores the images, a small relay server syncs the data, and the app itself is served at <a href="http://localhost:8020">http://localhost:8020</a>. Setup scripts for macOS, Linux and Windows do most of the work.</p><h2 id="get-the-code">Get the code</h2><pre><code class="bash">git clone https://github.com/clojure-finance/WeJure.git
 cd WeJure
-</code></pre><h2 id="first-time-setup">First-time setup</h2><p>The setup scripts install the requirements (Node.js, Yarn, IPFS), initialize IPFS and download the dependencies.</p><p><strong>macOS</strong></p><pre><code>./WejureStartup.sh
-</code></pre><p><strong>Linux</strong></p><pre><code>./setup_wejure_linux.sh
-</code></pre><p><strong>Windows</strong> (PowerShell)</p><pre><code>Set-ExecutionPolicy RemoteSigned -Scope Process
+</code></pre><h2 id="first-time-setup">First-time setup</h2><p>The setup scripts install Node.js, Yarn and IPFS, initialize IPFS and download the dependencies. Run the one for your system once.</p><p><strong>macOS</strong></p><pre><code class="bash">./WejureStartup.sh
+</code></pre><p><strong>Linux</strong></p><pre><code class="bash">./setup_wejure_linux.sh
+</code></pre><p><strong>Windows</strong> (PowerShell)</p><pre><code class="powershell">Set-ExecutionPolicy RemoteSigned -Scope Process
 .\WeJureWinStart.ps1
-</code></pre><p>The scripts do not install Java. Check that a Java SDK 21 or newer is installed:</p><pre><code>java -version
-</code></pre><h2 id="configure-ipfs-by-hand-optional">Configure IPFS by hand (optional)</h2><p>The setup scripts already do this. If you set up IPFS yourself, allow the WeJure page to call the IPFS API:</p><pre><code>ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://localhost:8020", "http://localhost:5001", "https://webui.ipfs.io"]'
+</code></pre><p>The scripts do not install Java. Check that a Java SDK 21 or newer is installed:</p><pre><code class="bash">java -version
+</code></pre><h2 id="run-wejure">Run WeJure</h2><p><strong>macOS and Linux</strong></p><pre><code class="bash">./WejureRun.sh
+</code></pre><p><strong>Windows</strong> (PowerShell)</p><pre><code class="powershell">.\WeJureWinRun.ps1
+</code></pre><p>Once the build has finished, open <a href="http://localhost:8020">http://localhost:8020</a>. <a href="../usage/">Using WeJure</a> explains what you can do there.</p><p><img src="../../img/start-page.png" alt="The WeJure start page" /></p><p>The run scripts start three processes. To start them by hand instead, run each in its own terminal:</p><ol><li>the IPFS daemon: <code>ipfs daemon</code></li><li>the GunDB relay, which syncs data between browsers: <code>cd src/wejure/js &amp;&amp; node relay</code></li><li>the development server: <code>yarn dev</code></li></ol><h2 id="configure-ipfs-by-hand">Configure IPFS by hand</h2><p>The setup scripts already do this. If you set up IPFS yourself, allow the WeJure page to call the IPFS API:</p><pre><code class="bash">ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin \
+  '["http://localhost:8020", "http://localhost:5001", "https://webui.ipfs.io"]'
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "POST"]'
-</code></pre><p>WeJure uploads images through the IPFS API on port 5001 and loads them from the gateway on port 8080. If the API listens elsewhere, run:</p><pre><code>ipfs config Addresses.API /ip4/127.0.0.1/tcp/5001
-</code></pre><h2 id="run-wejure">Run WeJure</h2><p><strong>macOS and Linux</strong></p><pre><code>./WejureRun.sh
-</code></pre><p><strong>Windows</strong> (PowerShell)</p><pre><code>.\WeJureWinRun.ps1
-</code></pre><p>The scripts start three processes, which can also be started by hand, each in its own terminal:</p><ol><li>the IPFS daemon: <code>ipfs daemon</code></li><li>the GunDB relay, which synchronizes data between browsers: <code>cd src/wejure/js &amp;&amp; node relay</code></li><li>the development server: <code>yarn dev</code></li></ol><p><img src="../../img/set_up.png" alt="set_up" /></p><h2 id="visit-wejure">Visit WeJure</h2><p>Open <a href="http://localhost:8020">http://localhost:8020</a> once the build has finished. <a href="../usage">Using WeJure</a> explains what you can do there.</p><p><img src="../../img/visit.png" alt="visit" /></p><h2 id="use-wejure-on-more-than-one-machine">Use WeJure on more than one machine</h2><p>Users only see each other's data when their browsers reach a common relay. To connect several machines, run the relay on a host they can all reach (for example <code>HOST=0.0.0.0 node relay</code>) and add its URL to <code>peers</code> in <code>src/wejure/js/db.js</code>.</p><h2 id="delete-all-data">Delete all data</h2><ol><li>Clear the site data (local storage) in every browser that opened WeJure.</li><li>Stop the relay and run <code>./remove_local_gun.sh</code>, which deletes <code>src/wejure/js/radata</code>.</li></ol><h2 id="for-developers">For developers</h2><h3 id="production-build">Production build</h3><pre><code>yarn release
-</code></pre><p>This writes an optimized <code>public/js/main.js</code>. Serve the <code>public/</code> folder with any web server that falls back to <code>index.html</code> for unknown paths, since WeJure uses real URLs such as <code>/home</code>. The IPFS daemon and the relay must still be running.</p><h3 id="end-to-end-tests">End-to-end tests</h3><pre><code>npx playwright install chromium
+</code></pre><p>WeJure uploads images through the IPFS API on port 5001 and loads them from the gateway on port 8080. If the API listens elsewhere, run:</p><pre><code class="bash">ipfs config Addresses.API /ip4/127.0.0.1/tcp/5001
+</code></pre><h2 id="use-wejure-on-more-than-one-machine">Use WeJure on more than one machine</h2><p>Users only see each other's data when their browsers reach a common relay. To connect several machines, run the relay on a host they can all reach (for example <code>HOST=0.0.0.0 node relay</code>) and add its URL to <code>peers</code> in <code>src/wejure/js/db.js</code>.</p><h2 id="delete-all-data">Delete all data</h2><ol><li>Clear the site data (local storage) in every browser that opened WeJure.</li><li>Stop the relay and run <code>./remove_local_gun.sh</code>, which deletes <code>src/wejure/js/radata</code>.</li></ol><h2 id="for-developers">For developers</h2><h3 id="production-build">Production build</h3><pre><code class="bash">yarn release
+</code></pre><p>This writes an optimized <code>public/js/main.js</code>. Serve the <code>public/</code> folder with any web server that falls back to <code>index.html</code> for unknown paths, since WeJure uses real URLs such as <code>/home</code>. The IPFS daemon and the relay must still be running.</p><h3 id="end-to-end-tests">End-to-end tests</h3><pre><code class="bash">npx playwright install chromium   # once, to install the test browser
 yarn test:e2e
-</code></pre><p>The first command installs the test browser and is needed only once. The test builds the release version and walks through every page with two users. It starts its own relay (with empty data), an IPFS stand-in and a web server on the ports WeJure uses (8001, 5001, 8080 and 8020), so stop any IPFS daemon, relay or development server first.</p><h3 id="data-model-and-code-layout">Data model and code layout</h3><p>The <a href="https://github.com/clojure-finance/WeJure#readme">WeJure README</a> documents where each kind of data is stored in GunDB and how the code is organized.</p>
+</code></pre><p>The test builds the release version and walks through every page with two users. It starts its own relay (with empty data), an IPFS stand-in and a web server on the ports WeJure uses (8001, 5001, 8080 and 8020), so stop any IPFS daemon, relay or development server first.</p><h3 id="data-model-and-code-layout">Data model and code layout</h3><p>The <a href="https://github.com/clojure-finance/WeJure#readme">WeJure README</a> documents where each kind of data is stored in GunDB and how the code is organized.</p>
 
     
     <div id="prev-next">
@@ -100,7 +95,7 @@ yarn test:e2e
     <a class="prev" href="/Wejure-website/pages-output/docs/"><i class="fa-solid fa-circle-left"></i><div class="nav-text">Background</div></a>
     
     
-    <a class="next" href="/Wejure-website/pages-output/usage/"><div class="nav-text"">Using WeJure</div><i class="fa-solid fa-circle-right"></i></a>
+    <a class="next" href="/Wejure-website/pages-output/usage/"><div class="nav-text">Using WeJure</div><i class="fa-solid fa-circle-right"></i></a>
     
 </div>
 
@@ -108,16 +103,14 @@ yarn test:e2e
 
 </div>
 
-            <br/>
-            <div id="footercont">
-                Copyright &copy; 2026 WeJure
-                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
-            </div>
+            <footer id="footercont">
+                &copy; 2026 WeJure &middot; Built with <a href="http://cryogenweb.org">Cryogen</a>
+            </footer>
         </article>
 
-        <script src="/Wejure-website/js/highlight.pack.js" type="application/javascript"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/powershell.min.js"></script>
+        <script src="/Wejure-website/js/site.js" type="application/javascript"></script>
 
         
         
