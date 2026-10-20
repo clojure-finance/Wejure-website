@@ -1,32 +1,43 @@
 {:title "Background"
  :layout :page
  :toc :ul
- :page-index 0
+ :page-index 1
  :navbar? true}
 
 ## Description
 
-Social networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the recent debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network that uses the the decentralized "interplanetary file system" (IPFS) and runs on a blockchain.
+Social networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the recent debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network in which no single server owns the data.
 
-## Installation
-WeJure is developed using [shadow-cljs](https://github.com/thheller/shadow-cljs) (which requires node.js, yarn and Java SDK).<br/>
-The following software are needed:
-- [Node.js](https://nodejs.org) 
-- [Yarn](https://www.yarnpkg.com)
-- [Java SDK](https://adoptium.net/) 
-- [InterPlanetary File System (IPFS)](https://ipfs.tech/)
+## How it works
 
-### Node.js
-Node.js is an open-source, cross-platform JavaScript runtime environment. It allows developers to run JavaScript code outside of a web browser, making it suitable for server-side and networking applications. You can download different versions of Node.js from the website, including the LTS (Long-Term Support) version recommended for most users.
+- **Data** lives in [GunDB](https://gun.eco/), a decentralized graph database that syncs between browsers through relay servers. Users see each other's data when their browsers reach a common relay.
+- **Images** are stored on the [InterPlanetary File System (IPFS)](https://ipfs.tech/), which addresses data by a fingerprint of its content rather than by its location.
+- **Accounts, signatures and encryption** use SEA, GunDB's cryptography layer. Each user has their own key pair.
 
-### Yarn
-Yarn is a package manager that also serves as a project manager. It provides features for managing dependencies and workflows in JavaScript projects. Yarn supports workspaces, allowing you to split your project into sub-components. It emphasizes stability and guarantees that installations will continue to work in the future. Yarn is an independent open-source project that encourages innovation and provides tools to solve various development challenges.
+The early [posts](../../archives) describe a first design built on the Ethereum blockchain; WeJure has since moved to GunDB and IPFS.
 
-### IPFS
-IPFS is an open system that allows the management of data without relying on a central server. It uses content addressing, allowing data retrieval based on the content's fingerprint rather than its location or name. IPFS offers versatility and has applications in various industries, such as offline-native productivity tools, censorship-resistant content libraries, and efficient interplanetary communication. It provides data transparency and permanence, making it suitable for storing digital art, publishing scientific research, and recording proposals and votes in Web3 projects. IPFS is designed to reimagine the structure of the traditional web and has an active community of developers and contributors.
+## Security and encryption
 
+- **Direct messages** are end-to-end encrypted: the two participants derive a shared secret (ECDH), and each message is encrypted with AES-GCM. Only the two participants can read it.
+- **Group chats** use layers: every membership change starts a new layer with a fresh key, encrypted separately for each member. New members cannot read messages from before they joined, and removed members cannot read messages sent after they left.
+- **Public data**: profiles, posts, follows, blocks and the list of who has chatted with whom are stored unencrypted.
 
+## Requirements
 
+WeJure is built with [shadow-cljs](https://github.com/thheller/shadow-cljs). The following software is needed:
 
+- [Node.js](https://nodejs.org)
+- [Yarn](https://yarnpkg.com) 1.x
+- [Java SDK](https://adoptium.net/) 21 or newer
+- an [IPFS](https://ipfs.tech/) node ([Kubo](https://github.com/ipfs/kubo))
 
+The setup scripts in the [Step by Step Guide](../example) install all of them except Java.
 
+## Status
+
+WeJure is still under development.
+
+- Group chat is implemented in the GunDB layer, but the chat page has no user interface for groups yet.
+- Unblocking a user has no user interface yet.
+
+The [WeJure README](https://github.com/clojure-finance/WeJure#readme) documents the data model and the code layout.
