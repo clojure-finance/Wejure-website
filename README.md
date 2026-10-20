@@ -4,7 +4,7 @@ The documentation website for [WeJure](https://github.com/clojure-finance/WeJure
 
 Link to website: [https://clojure-finance.github.io/Wejure-website/](https://clojure-finance.github.io/Wejure-website/)
 
-The pages are in `content/md/pages/`, the blog posts in `content/md/posts/` and the images in `content/img/`.
+The pages are in `content/md/pages/` and the images in `content/img/`.
 
 ### Requirements
 
