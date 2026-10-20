@@ -1,79 +1,86 @@
-{:title "Step by Step Guide"
+{:title "Getting Started"
  :layout :page
  :toc :ul
  :page-index 3
  :navbar? true}
 
+WeJure runs on your own machine: an IPFS node stores the images, a small relay server syncs the data, and the app itself is served at [http://localhost:8020](http://localhost:8020). Setup scripts for macOS, Linux and Windows do most of the work.
+
 ## Get the code
 
-```
+```bash
 git clone https://github.com/clojure-finance/WeJure.git
 cd WeJure
 ```
 
 ## First-time setup
 
-The setup scripts install the requirements (Node.js, Yarn, IPFS), initialize IPFS and download the dependencies.
+The setup scripts install Node.js, Yarn and IPFS, initialize IPFS and download the dependencies. Run the one for your system once.
 
 **macOS**
-```
+
+```bash
 ./WejureStartup.sh
 ```
 
 **Linux**
-```
+
+```bash
 ./setup_wejure_linux.sh
 ```
 
 **Windows** (PowerShell)
-```
+
+```powershell
 Set-ExecutionPolicy RemoteSigned -Scope Process
 .\WeJureWinStart.ps1
 ```
 
 The scripts do not install Java. Check that a Java SDK 21 or newer is installed:
-```
+
+```bash
 java -version
-```
-
-## Configure IPFS by hand (optional)
-
-The setup scripts already do this. If you set up IPFS yourself, allow the WeJure page to call the IPFS API:
-```
-ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://localhost:8020", "http://localhost:5001", "https://webui.ipfs.io"]'
-ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "POST"]'
-```
-
-WeJure uploads images through the IPFS API on port 5001 and loads them from the gateway on port 8080. If the API listens elsewhere, run:
-```
-ipfs config Addresses.API /ip4/127.0.0.1/tcp/5001
 ```
 
 ## Run WeJure
 
 **macOS and Linux**
-```
+
+```bash
 ./WejureRun.sh
 ```
 
 **Windows** (PowerShell)
-```
+
+```powershell
 .\WeJureWinRun.ps1
 ```
 
-The scripts start three processes, which can also be started by hand, each in its own terminal:
+Once the build has finished, open [http://localhost:8020](http://localhost:8020). [Using WeJure](../usage/) explains what you can do there.
+
+![The WeJure start page](../../img/start-page.png)
+
+The run scripts start three processes. To start them by hand instead, run each in its own terminal:
 
 1. the IPFS daemon: `ipfs daemon`
-2. the GunDB relay, which synchronizes data between browsers: `cd src/wejure/js && node relay`
+2. the GunDB relay, which syncs data between browsers: `cd src/wejure/js && node relay`
 3. the development server: `yarn dev`
 
-![set_up](../../img/set_up.png)
+## Configure IPFS by hand
 
-## Visit WeJure
+The setup scripts already do this. If you set up IPFS yourself, allow the WeJure page to call the IPFS API:
 
-Open [http://localhost:8020](http://localhost:8020) once the build has finished. [Using WeJure](../usage) explains what you can do there.
+```bash
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin \
+  '["http://localhost:8020", "http://localhost:5001", "https://webui.ipfs.io"]'
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "POST"]'
+```
 
-![visit](../../img/visit.png)
+WeJure uploads images through the IPFS API on port 5001 and loads them from the gateway on port 8080. If the API listens elsewhere, run:
+
+```bash
+ipfs config Addresses.API /ip4/127.0.0.1/tcp/5001
+```
 
 ## Use WeJure on more than one machine
 
@@ -88,7 +95,7 @@ Users only see each other's data when their browsers reach a common relay. To co
 
 ### Production build
 
-```
+```bash
 yarn release
 ```
 
@@ -96,12 +103,12 @@ This writes an optimized `public/js/main.js`. Serve the `public/` folder with an
 
 ### End-to-end tests
 
-```
-npx playwright install chromium
+```bash
+npx playwright install chromium   # once, to install the test browser
 yarn test:e2e
 ```
 
-The first command installs the test browser and is needed only once. The test builds the release version and walks through every page with two users. It starts its own relay (with empty data), an IPFS stand-in and a web server on the ports WeJure uses (8001, 5001, 8080 and 8020), so stop any IPFS daemon, relay or development server first.
+The test builds the release version and walks through every page with two users. It starts its own relay (with empty data), an IPFS stand-in and a web server on the ports WeJure uses (8001, 5001, 8080 and 8020), so stop any IPFS daemon, relay or development server first.
 
 ### Data model and code layout
 
