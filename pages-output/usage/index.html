@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>WeJure: Using WeJure</title>
+        
+
+<meta name="description" content="This page walks through WeJure once it is running at http://localhost:8020; see the Step by Step Guide to get there.Sign up and log in">
+
+<meta property="og:description" content="This page walks through WeJure once it is running at http://localhost:8020; see the Step by Step Guide to get there.Sign up and log in">
+
+<meta property="og:url" content="https://clojure-finance.github.io/Wejure-website/pages-output/usage/" />
+<meta property="og:title" content="Using WeJure" />
+<meta property="og:type" content="article" />
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        
+        <link rel="icon" type="image/png" href="/Wejure-website/img/favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="/Wejure-website/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/Wejure-website/css/blog.css" rel="stylesheet" type="text/css" />
+        <link href="/Wejure-website/css/lotus-highlightjs.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/clojure.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/plaintext.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="WeJure" href="/Wejure-website/">
+                    <div class="title-text text desktop-and-tablet-only">
+                        <i class="desktop-and-tablet-only fa fa-table"></i>
+                        <br/><br/>
+                        WeJure
+                    </div>
+                    <div class="title-text text mobile-only">WeJure</div>
+                </a>
+            </div> 
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <ul class="menu">
+                        <li ><a title="Home" href="/Wejure-website/"><div class="menu-item-text">Home</div></a></li>
+                        
+                        <li >
+                            <a href="/Wejure-website/pages-output/docs/"><div class="menu-item-text">Background</div></a>
+                        </li>
+                        
+                        <li >
+                            <a href="/Wejure-website/pages-output/example/"><div class="menu-item-text">Step by Step Guide</div></a>
+                        </li>
+                        
+                        <li  class="active" >
+                            <a href="/Wejure-website/pages-output/usage/"><div class="menu-item-text">Using WeJure</div></a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a target="_blank" title="GitHub" href="https://github.com/clojure-finance/wejure" rel="external"><i class="icon fa-brands fa-github"></i></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="custom-page">
+    <div id="page-header">
+        <h1>Using WeJure</h1>
+    </div>
+    <ul class="toc"><li><a href="#sign-up-and-log-in">Sign up and log in</a></li><li><a href="#the-top-bar">The top bar</a></li><li><a href="#feed-and-posts">Feed and posts</a></li><li><a href="#profiles">Profiles</a></li><li><a href="#search">Search</a></li><li><a href="#messages">Messages</a></li><li><a href="#limitations">Limitations</a></li></ul>
+    <p>This page walks through WeJure once it is running at <a href="http://localhost:8020">http://localhost:8020</a>; see the <a href="../example">Step by Step Guide</a> to get there.</p><h2 id="sign-up-and-log-in">Sign up and log in</h2><p>Click <strong>Sign Up</strong> on the start page and fill in:</p><ul><li>a username of 3–20 characters: letters, digits and underscores only</li><li>a password of 8–20 characters, entered twice</li><li>a profile picture, which is required</li></ul><p>The profile picture is uploaded to IPFS, so signing up fails if the IPFS daemon is not running. After signing up, log in with the same username and password.</p><p>You stay logged in only in that browser tab: a new tab needs a new login, and closing the tab logs you out. <strong>Logout</strong> in the top bar logs you out right away.</p><h2 id="the-top-bar">The top bar</h2><p>Once logged in, the top bar holds:</p><ul><li>the WeJure logo, which leads back to your feed</li><li>the search box (see <a href="#search">Search</a>)</li><li>your username and profile picture, which lead to your profile</li><li><strong>Message</strong>, which opens your messages (on the messages page it becomes <strong>Main Page</strong>)</li><li><strong>Logout</strong></li></ul><h2 id="feed-and-posts">Feed and posts</h2><p>Your feed shows your own posts and the posts of everyone you follow, newest first.</p><p>To post, type in the "What's on your mind?" box, add an image with the camera button if you like, and click <strong>Post</strong>. A post needs text, an image, or both. Images are uploaded to IPFS.</p><p>Your own posts have a <strong>Delete</strong> button. Deleting a post removes it from WeJure, but its image stays on IPFS.</p><h2 id="profiles">Profiles</h2><p>Click a username or profile picture to open that user's profile, with their bio and posts.</p><ul><li>On someone else's profile, <strong>Follow</strong> adds their posts to your feed. Once you follow them, the profile shows <strong>Message</strong> and <strong>Unfollow</strong>.</li><li>On your own profile, <strong>Edit Profile</strong> changes your bio (up to 150 characters).</li></ul><h2 id="search">Search</h2><p>The button next to the search box switches between <strong>User</strong> and <strong>Post</strong> search; press Enter to search.</p><ul><li><strong>User</strong> search finds every username that contains your text. It is case-sensitive, and an exact match comes first.</li><li><strong>Post</strong> search finds every post whose text contains your text, ignoring case.</li></ul><h2 id="messages">Messages</h2><p>Click <strong>Message</strong> in the top bar to open your messages. Your contacts are everyone you follow plus everyone who has messaged you, with the most recent conversation first. Pick a contact, type, and press Enter or click <strong>Send</strong>. Messages are end-to-end encrypted: only you and your contact can read them.</p><p>To block someone, open your conversation with them and click <strong>Block User</strong>. Neither of you can then message the other, and they disappear from your contacts. Blocking does not unfollow them or hide their posts, and WeJure has no way to unblock yet.</p><h2 id="limitations">Limitations</h2><p>See <a href="../docs/#status-and-limitations">Status and limitations</a> for what WeJure cannot do yet.</p>
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/Wejure-website/pages-output/example/"><i class="fa-solid fa-circle-left"></i><div class="nav-text">Step by Step Guide</div></a>
+    
+    
+    <div class="next"></div>
+    
+</div>
+
+    
+
+</div>
+
+            <br/>
+            <div id="footercont">
+                Copyright &copy; 2026 WeJure
+                <br>Powered by <a href="http://cryogenweb.org">Cryogen</a>
+            </div>
+        </article>
+
+        <script src="/Wejure-website/js/highlight.pack.js" type="application/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
+
+        
+        
+    </body>
+</html>

@@ -55,13 +55,15 @@
                             <a href="/Wejure-website/pages-output/example/"><div class="menu-item-text">Step by Step Guide</div></a>
                         </li>
                         
-                        <li ><a title="Archives" href="/Wejure-website/archives/"><div class="menu-item-text">Archives</div></a></li>
+                        <li >
+                            <a href="/Wejure-website/pages-output/usage/"><div class="menu-item-text">Using WeJure</div></a>
+                        </li>
+                        
                     </ul>
                 </nav>
 
                 <nav id="socialmedia">
                     <ul>
-                        <li><a target="_blank" title="RSS" href="/Wejure-website/feed.xml" rel="external"><i class="icon fa-solid fa-rss"></i></a></li>
                         <li><a target="_blank" title="GitHub" href="https://github.com/clojure-finance/wejure" rel="external"><i class="icon fa-brands fa-github"></i></a></li>
                     </ul>
                 </nav>
@@ -74,20 +76,23 @@
     <div id="page-header">
         <h1>Step by Step Guide</h1>
     </div>
-    <ul class="toc"><li><a href="#get-the-code">Get the code</a></li><li><a href="#first-time-setup">First-time setup</a></li><li><a href="#configure-ipfs-by-hand-optional">Configure IPFS by hand (optional)</a></li><li><a href="#run-wejure">Run WeJure</a></li><li><a href="#visit-wejure">Visit WeJure</a></li><li><a href="#use-wejure-on-more-than-one-machine">Use WeJure on more than one machine</a></li><li><a href="#delete-all-data">Delete all data</a></li></ul>
-    <h3 id="get-the-code">Get the code</h3><pre><code>git clone https://github.com/clojure-finance/WeJure.git
+    <ul class="toc"><li><a href="#get-the-code">Get the code</a></li><li><a href="#first-time-setup">First-time setup</a></li><li><a href="#configure-ipfs-by-hand-optional">Configure IPFS by hand (optional)</a></li><li><a href="#run-wejure">Run WeJure</a></li><li><a href="#visit-wejure">Visit WeJure</a></li><li><a href="#use-wejure-on-more-than-one-machine">Use WeJure on more than one machine</a></li><li><a href="#delete-all-data">Delete all data</a></li><li><a href="#for-developers">For developers</a></li><ul><li><a href="#production-build">Production build</a></li><li><a href="#end-to-end-tests">End-to-end tests</a></li><li><a href="#data-model-and-code-layout">Data model and code layout</a></li></ul></ul>
+    <h2 id="get-the-code">Get the code</h2><pre><code>git clone https://github.com/clojure-finance/WeJure.git
 cd WeJure
-</code></pre><h3 id="first-time-setup">First-time setup</h3><p>The setup scripts install the requirements (Node.js, Yarn, IPFS), initialize IPFS and download the dependencies.</p><p><strong>macOS</strong></p><pre><code>./WejureStartup.sh
+</code></pre><h2 id="first-time-setup">First-time setup</h2><p>The setup scripts install the requirements (Node.js, Yarn, IPFS), initialize IPFS and download the dependencies.</p><p><strong>macOS</strong></p><pre><code>./WejureStartup.sh
 </code></pre><p><strong>Linux</strong></p><pre><code>./setup_wejure_linux.sh
 </code></pre><p><strong>Windows</strong> (PowerShell)</p><pre><code>Set-ExecutionPolicy RemoteSigned -Scope Process
 .\WeJureWinStart.ps1
 </code></pre><p>The scripts do not install Java. Check that a Java SDK 21 or newer is installed:</p><pre><code>java -version
-</code></pre><h3 id="configure-ipfs-by-hand-optional">Configure IPFS by hand (optional)</h3><p>The setup scripts already do this. If you set up IPFS yourself, allow the WeJure page to call the IPFS API:</p><pre><code>ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://localhost:8020", "http://localhost:5001", "https://webui.ipfs.io"]'
+</code></pre><h2 id="configure-ipfs-by-hand-optional">Configure IPFS by hand (optional)</h2><p>The setup scripts already do this. If you set up IPFS yourself, allow the WeJure page to call the IPFS API:</p><pre><code>ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://localhost:8020", "http://localhost:5001", "https://webui.ipfs.io"]'
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "POST"]'
 </code></pre><p>WeJure uploads images through the IPFS API on port 5001 and loads them from the gateway on port 8080. If the API listens elsewhere, run:</p><pre><code>ipfs config Addresses.API /ip4/127.0.0.1/tcp/5001
-</code></pre><h3 id="run-wejure">Run WeJure</h3><p><strong>macOS and Linux</strong></p><pre><code>./WejureRun.sh
+</code></pre><h2 id="run-wejure">Run WeJure</h2><p><strong>macOS and Linux</strong></p><pre><code>./WejureRun.sh
 </code></pre><p><strong>Windows</strong> (PowerShell)</p><pre><code>.\WeJureWinRun.ps1
-</code></pre><p>The scripts start three processes, which can also be started by hand, each in its own terminal:</p><ol><li>the IPFS daemon: <code>ipfs daemon</code></li><li>the GunDB relay, which synchronizes data between browsers: <code>cd src/wejure/js &amp;&amp; node relay</code></li><li>the development server: <code>yarn dev</code></li></ol><p><img src="../../img/set_up.png" alt="set_up" /></p><h3 id="visit-wejure">Visit WeJure</h3><p>Open <a href="http://localhost:8020">http://localhost:8020</a> once the build has finished.</p><p><img src="../../img/visit.png" alt="visit" /></p><h3 id="use-wejure-on-more-than-one-machine">Use WeJure on more than one machine</h3><p>Users only see each other's data when their browsers reach a common relay. To connect several machines, run the relay on a host they can all reach (for example <code>HOST=0.0.0.0 node relay</code>) and add its URL to <code>peers</code> in <code>src/wejure/js/db.js</code>.</p><h3 id="delete-all-data">Delete all data</h3><ol><li>Clear the site data (local storage) in every browser that opened WeJure.</li><li>Stop the relay and run <code>./remove_local_gun.sh</code>, which deletes <code>src/wejure/js/radata</code>.</li></ol>
+</code></pre><p>The scripts start three processes, which can also be started by hand, each in its own terminal:</p><ol><li>the IPFS daemon: <code>ipfs daemon</code></li><li>the GunDB relay, which synchronizes data between browsers: <code>cd src/wejure/js &amp;&amp; node relay</code></li><li>the development server: <code>yarn dev</code></li></ol><p><img src="../../img/set_up.png" alt="set_up" /></p><h2 id="visit-wejure">Visit WeJure</h2><p>Open <a href="http://localhost:8020">http://localhost:8020</a> once the build has finished. <a href="../usage">Using WeJure</a> explains what you can do there.</p><p><img src="../../img/visit.png" alt="visit" /></p><h2 id="use-wejure-on-more-than-one-machine">Use WeJure on more than one machine</h2><p>Users only see each other's data when their browsers reach a common relay. To connect several machines, run the relay on a host they can all reach (for example <code>HOST=0.0.0.0 node relay</code>) and add its URL to <code>peers</code> in <code>src/wejure/js/db.js</code>.</p><h2 id="delete-all-data">Delete all data</h2><ol><li>Clear the site data (local storage) in every browser that opened WeJure.</li><li>Stop the relay and run <code>./remove_local_gun.sh</code>, which deletes <code>src/wejure/js/radata</code>.</li></ol><h2 id="for-developers">For developers</h2><h3 id="production-build">Production build</h3><pre><code>yarn release
+</code></pre><p>This writes an optimized <code>public/js/main.js</code>. Serve the <code>public/</code> folder with any web server that falls back to <code>index.html</code> for unknown paths, since WeJure uses real URLs such as <code>/home</code>. The IPFS daemon and the relay must still be running.</p><h3 id="end-to-end-tests">End-to-end tests</h3><pre><code>npx playwright install chromium
+yarn test:e2e
+</code></pre><p>The first command installs the test browser and is needed only once. The test builds the release version and walks through every page with two users. It starts its own relay (with empty data), an IPFS stand-in and a web server on the ports WeJure uses (8001, 5001, 8080 and 8020), so stop any IPFS daemon, relay or development server first.</p><h3 id="data-model-and-code-layout">Data model and code layout</h3><p>The <a href="https://github.com/clojure-finance/WeJure#readme">WeJure README</a> documents where each kind of data is stored in GunDB and how the code is organized.</p>
 
     
     <div id="prev-next">
@@ -95,7 +100,7 @@ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "POST"]
     <a class="prev" href="/Wejure-website/pages-output/docs/"><i class="fa-solid fa-circle-left"></i><div class="nav-text">Background</div></a>
     
     
-    <div class="next"></div>
+    <a class="next" href="/Wejure-website/pages-output/usage/"><div class="nav-text"">Using WeJure</div><i class="fa-solid fa-circle-right"></i></a>
     
 </div>
 
