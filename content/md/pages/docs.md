@@ -6,15 +6,13 @@
 
 ## Description
 
-Social networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the recent debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network in which no single server owns the data.
+Social networks such as Twitter, Facebook, or Instagram are centralized in the sense that a single company runs them and stores all user data and user content centrally. While this allows for easier storage, the data generated largely belongs to the company and not the users. This issue is highlighted by the debate about content moderation. To tackle this issue from a new perspective, we develop a decentralized social network in which no single server owns the data.
 
 ## How it works
 
 - **Data** lives in [GunDB](https://gun.eco/), a decentralized graph database that syncs between browsers through relay servers. Users see each other's data when their browsers reach a common relay.
 - **Images** are stored on the [InterPlanetary File System (IPFS)](https://ipfs.tech/), which addresses data by a fingerprint of its content rather than by its location.
 - **Accounts, signatures and encryption** use SEA, GunDB's cryptography layer. Each user has their own key pair.
-
-The early [posts](../../archives) describe a first design built on the Ethereum blockchain; WeJure has since moved to GunDB and IPFS.
 
 ## Security and encryption
 
@@ -33,11 +31,15 @@ WeJure is built with [shadow-cljs](https://github.com/thheller/shadow-cljs). The
 
 The setup scripts in the [Step by Step Guide](../example) install all of them except Java.
 
-## Status
+## Status and limitations
 
 WeJure is still under development.
 
 - Group chat is implemented in the GunDB layer, but the chat page has no user interface for groups yet.
 - Unblocking a user has no user interface yet.
+- A forgotten password cannot be reset, and there is no way to change your password, username or profile picture.
+- You are logged in per browser tab: a new tab needs a new login, and closing the tab logs you out.
+- Deleting a post removes it from WeJure, but its image stays on IPFS.
+- Users only see each other's data when their browsers reach a common relay (see the [Step by Step Guide](../example/#use-wejure-on-more-than-one-machine)).
 
 The [WeJure README](https://github.com/clojure-finance/WeJure#readme) documents the data model and the code layout.

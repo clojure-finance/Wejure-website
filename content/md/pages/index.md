@@ -6,9 +6,7 @@
 
 Welcome to WeJure! WeJure is a decentralized, peer-to-peer social network written in ClojureScript, developed at HKU Business School.
 
-To get started, please read our [Background](pages-output/docs) and [Step by Step Guide](pages-output/example).
-
-To know more about our design and implementation ideas, please read our [posts](archives).
+To get started, please read our [Background](pages-output/docs) and [Step by Step Guide](pages-output/example). [Using WeJure](pages-output/usage) explains the app's features once it is running.
 
 ## Features
 
