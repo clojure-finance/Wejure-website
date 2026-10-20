@@ -4,7 +4,7 @@
  :page-index 4
  :navbar? true}
 
-This page walks through WeJure once it is running at [http://localhost:8020](http://localhost:8020); see the [Step by Step Guide](../example) to get there.
+This page walks through WeJure once it is running at [http://localhost:8020](http://localhost:8020). [Getting Started](../example/) explains how to get there.
 
 ## Sign up and log in
 
