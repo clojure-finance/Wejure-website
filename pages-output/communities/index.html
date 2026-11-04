@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>WeJure: Communities</title>
+        
+
+<meta name="description" content="Communities are WeJure&#39;s group spaces, laid out like Zulip: a community has channels, and the messages in a channel are grouped by topic. No relay is in charge of a community: each member&#39;s client works out from signed records who belongs and who may do what.Private and open communities">
+
+<meta property="og:description" content="Communities are WeJure&#39;s group spaces, laid out like Zulip: a community has channels, and the messages in a channel are grouped by topic. No relay is in charge of a community: each member&#39;s client works out from signed records who belongs and who may do what.Private and open communities">
+
+<meta property="og:url" content="https://clojure-finance.github.io/Wejure-website/pages-output/communities/" />
+<meta property="og:title" content="Communities" />
+<meta property="og:type" content="article" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="/Wejure-website/img/favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link href="/Wejure-website/css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="/Wejure-website/css/blog.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="/Wejure-website/css/wejure.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <aside id="sidebar">
+            <div id="logo">
+                <a title="WeJure" href="/Wejure-website/">
+                    <img class="logo-image desktop-and-tablet-only" src="/Wejure-website/img/logo_white.png" alt="WeJure">
+                    <div class="title-text text mobile-only">WeJure</div>
+                </a>
+            </div>
+
+            <nav id="sidebar-links">
+                <nav id="menucont">
+                    <input type="checkbox" id="menu-checkbox">
+                    <label for="menu-checkbox" class="menutitle">
+                        <i class="fa-solid fa-bars"></i><span class="menu-text">Menu</span>
+                    </label>
+                    <ul class="menu">
+                        <li ><a title="Home" href="/Wejure-website/"><div class="menu-item-text">Home</div></a></li>
+                        
+                        <li >
+                            <a href="/Wejure-website/pages-output/docs/"><div class="menu-item-text">Background</div></a>
+                        </li>
+                        
+                        <li >
+                            <a href="/Wejure-website/pages-output/example/"><div class="menu-item-text">Getting Started</div></a>
+                        </li>
+                        
+                        <li >
+                            <a href="/Wejure-website/pages-output/usage/"><div class="menu-item-text">Using WeJure</div></a>
+                        </li>
+                        
+                        <li  class="active" >
+                            <a href="/Wejure-website/pages-output/communities/"><div class="menu-item-text">Communities</div></a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+
+                <nav id="socialmedia">
+                    <ul>
+                        <li><a target="_blank" title="WeJure on GitHub" href="https://github.com/clojure-finance/WeJure" rel="external"><i class="icon fa-brands fa-github"></i></a></li>
+                    </ul>
+                </nav>
+            </nav>
+        </aside>
+
+        <article id="main">
+            
+<div id="custom-page">
+    <div id="page-header">
+        <h1>Communities</h1>
+    </div>
+    <ul class="toc"><li><a href="#private-and-open-communities">Private and open communities</a></li><li><a href="#create-a-community">Create a community</a></li><li><a href="#invite-and-join">Invite and join</a></li><li><a href="#channels-and-topics">Channels and topics</a></li><li><a href="#roles">Roles</a></li><li><a href="#how-communities-work">How communities work</a></li></ul>
+    <p>Communities are WeJure's group spaces, laid out like <a href="https://zulip.com/">Zulip</a>: a community has channels, and the messages in a channel are grouped by topic. No relay is in charge of a community: each member's client works out from signed records who belongs and who may do what.</p><h2 id="private-and-open-communities">Private and open communities</h2><ul><li><strong>Private</strong> communities are encrypted and invite only. Relays see neither the community nor who writes nor the topics.</li><li><strong>Open</strong> communities are public: anyone with the link can join, unless an admin switches joining to invitation only. They can still have private channels, which are encrypted.</li></ul><h2 id="create-a-community">Create a community</h2><p>Click <strong>Communities</strong> in the top bar. Under <strong>Create a community</strong>, enter a name, choose <strong>Private</strong> or <strong>Open</strong>, and click <strong>Create</strong>. You become the owner, and the community starts with one channel, <code>general</code>.</p><p><img src="../../img/communities.png" alt="The Communities page" /></p><h2 id="invite-and-join">Invite and join</h2><ul><li><strong>Adding people:</strong> admins and owners open <strong>Settings</strong>, enter a username under <strong>Add by username</strong>, choose a role and click <strong>Add</strong>. The person then finds an invitation on their Communities page and clicks <strong>Accept</strong>. If several accounts share that username, WeJure refuses to guess.</li><li><strong>Joining an open community:</strong> its members can <strong>Copy link</strong> at the top of the community. Others paste the link under <strong>Join an open community</strong> and click <strong>Join</strong>, or open it and click <strong>Join</strong> there.</li></ul><p>Your list of communities is saved, encrypted to you, with your account, so it comes back when you log in on another device.</p><h2 id="channels-and-topics">Channels and topics</h2><p>The community page has three columns: the channels, the topics of the selected channel, and its messages. A lock marks a private channel.</p><p><img src="../../img/community.png" alt="A community: channels, topics and messages" /></p><p>To write, either select a topic, or, with <strong>All topics</strong> selected, type a new topic name in the <strong>Topic</strong> box. Then type your message and press Enter or click <strong>Send</strong>. A channel opens at its newest messages; scroll up or click <strong>Load older messages</strong> for older ones. A <strong>+</strong> after a topic's count means the channel has older messages not loaded yet, which may add to it.</p><p>Your own messages have a <strong>Delete</strong> button. Moderators and above can <strong>Hide</strong> other people's messages.</p><p>Admins and owners create channels in <strong>Settings</strong>, under <strong>Channels</strong>. Each channel has two settings:</p><ul><li><strong>Who:</strong> everyone in the community, or chosen members (a private channel, with its own key).</li><li><strong>History:</strong> whether newcomers see the past, or only what is written after they join.</li></ul><p><strong>Archive</strong> removes a channel from the list.</p><h2 id="roles">Roles</h2><table><thead><tr><th>Role</th><th>Can</th></tr></thead><tbody><tr><td>member</td><td>read and write in their channels, delete their own messages, leave</td></tr><tr><td>moderator</td><td>also hide messages, and remove members</td></tr><tr><td>admin</td><td>also add people, make members moderators and back, create and archive channels, change the name, description and joining</td></tr><tr><td>owner</td><td>also make admins, and propose changes to the owners</td></tr></tbody></table><p>Moderators, admins and owners can <strong>Remove</strong> only people ranked below them. In open communities, <strong>Ban</strong> also keeps the person from joining again.</p><p><strong>Owner votes.</strong> Making someone an owner, or demoting or removing an owner, needs a majority of the owners: such a change shows up under <strong>Owner votes</strong> in Settings, and takes effect once more than half of the owners have approved it (the owner who proposed it counts; the others click <strong>Approve</strong>). With three or more owners, one lost or rogue owner can neither take the community over nor freeze it. The last owner cannot leave.</p><h2 id="how-communities-work">How communities work</h2><ul><li><strong>Operations.</strong> Every change, such as adding a member or creating a channel, is an operation: an event signed by whoever makes it, which names the latest operations its author had seen. The operations form a graph, like git commits, and every member's client computes the community's state from it with the same rules. No relay has to put them in order or enforce anything, and an operation by someone without the right role simply does not count.</li><li><strong>Keys.</strong> In a private community, the log of operations and each channel have their own chain of keys; in an open community, only the private channels do. Each key reaches the members in an encrypted message (NIP-59), so all their devices can read it. When someone leaves or is removed, a new key replaces the old one, so they cannot read what comes after. New members get the keys for the past, unless a channel shows newcomers only what comes after they join.</li><li><strong>No backdating.</strong> A removed member still holds the old keys. To keep them from slipping in messages dated as if from before, the removal records their latest messages, and later ones do not count.</li><li><strong>Checkpoints.</strong> The owners' clients regularly sign a snapshot of the community's state, which counts once a majority of the owners approved it. A new device starts from the latest snapshot instead of replaying every operation: in WeJure's benchmark, it receives 8 events instead of 334.</li></ul><p>Why not an existing standard? NIP-29 groups live on one relay, which enforces membership: if it goes down, the group goes with it. MLS (Marmot, on Nostr) treats each device as a member, so a new phone cannot read what was sent before it joined, and needs all members to apply changes in one agreed order. The full design, with its known limits, is in <a href="https://github.com/clojure-finance/WeJure/blob/main/docs/COMMUNITIES.md">docs/COMMUNITIES.md</a>.</p>
+
+    
+    <div id="prev-next">
+    
+    <a class="prev" href="/Wejure-website/pages-output/usage/"><i class="fa-solid fa-circle-left"></i><div class="nav-text">Using WeJure</div></a>
+    
+    
+    <div class="next"></div>
+    
+</div>
+
+    
+
+</div>
+
+            <footer id="footercont">
+                &copy; 2026 WeJure &middot; Built with <a href="http://cryogenweb.org">Cryogen</a>
+            </footer>
+        </article>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/powershell.min.js"></script>
+        <script src="/Wejure-website/js/site.js" type="application/javascript"></script>
+
+        
+        
+    </body>
+</html>

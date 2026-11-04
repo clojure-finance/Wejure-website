@@ -249,11 +249,44 @@ a:hover {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
 }
 
+/* Tables */
+
+#custom-page table {
+  display: table;           /* blog.css makes narrow tables scroll unwrapped */
+  width: 100%;
+  white-space: normal;
+  border-collapse: collapse;
+  margin: 0.5rem 0 1.5rem;
+  font-size: 0.95em;
+}
+
+#custom-page th,
+#custom-page td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+#custom-page th {
+  border-bottom: 2px solid var(--accent-line);
+  font-weight: 600;
+}
+
+#custom-page th:first-child,
+#custom-page td:first-child {
+  width: 1%;                /* as narrow as its content */
+  white-space: nowrap;
+}
+
+#custom-page td:first-child {
+  font-weight: 600;
+}
+
 /* Home page link cards */
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 1rem;
   margin: 1.5rem 0 2rem;
 }
