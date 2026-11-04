@@ -5,9 +5,9 @@
         <title>WeJure: Getting Started</title>
         
 
-<meta name="description" content="WeJure runs on your own machine as a single process: a small Node.js server serves the app and runs a Nostr relay and a Blossom media server next to it, all at http://localhost:8020.Requirements">
+<meta name="description" content="Build and run WeJure on your own machine, use other relays and media servers, and run its tests.">
 
-<meta property="og:description" content="WeJure runs on your own machine as a single process: a small Node.js server serves the app and runs a Nostr relay and a Blossom media server next to it, all at http://localhost:8020.Requirements">
+<meta property="og:description" content="Build and run WeJure on your own machine, use other relays and media servers, and run its tests.">
 
 <meta property="og:url" content="https://clojure-finance.github.io/Wejure-website/pages-output/example/" />
 <meta property="og:title" content="Getting Started" />
@@ -84,7 +84,7 @@ npm run release   # builds public/js/main.js
 npm start         # http://localhost:8020
 </code></pre><p>Open <a href="http://localhost:8020">http://localhost:8020</a>. <a href="../usage/">Using WeJure</a> explains what you can do there.</p><p><img src="../../img/start-page.png" alt="The WeJure start page" /></p><p>The server keeps its data in <code>data/</code>. Its options:</p><pre><code class="bash">node server/index.js [--port 8020] [--host 127.0.0.1] [--data data] [--public public]
 </code></pre><p>The <code>PORT</code> and <code>HOST</code> environment variables work too.</p><h2 id="development-mode">Development mode</h2><pre><code class="bash">npm run dev
-</code></pre><p>This runs the shadow-cljs watch build, which reloads the page as you edit the ClojureScript, together with the server, also at <a href="http://localhost:8020">http://localhost:8020</a>.</p><h2 id="use-other-relays-and-media-servers">Use other relays and media servers</h2><p>By default the app uses the relay and media server of the server it came from. To spread the data across independent servers, list them in <code>public/config.js</code>; no rebuild is needed:</p><pre><code class="js">window.WEJURE_CONFIG = {
+</code></pre><p>This runs the shadow-cljs watch build, which updates the open page as you edit the ClojureScript (hot reload), together with the server, also at <a href="http://localhost:8020">http://localhost:8020</a>.</p><h2 id="use-other-relays-and-media-servers">Use other relays and media servers</h2><p>By default the app uses the relay and media server of the server it came from. To spread the data across independent servers, list them in <code>public/config.js</code>; no rebuild is needed:</p><pre><code class="js">window.WEJURE_CONFIG = {
     relays: ["wss://relay-one.example", "wss://relay-two.example"],
     mediaServers: ["https://media-one.example", "https://media-two.example"],
 };
@@ -114,7 +114,6 @@ npm run test:e2e
         </article>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/powershell.min.js"></script>
         <script src="/Wejure-website/js/site.js" type="application/javascript"></script>
 
         
