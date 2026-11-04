@@ -1,7 +1,8 @@
 {:title "Using WeJure"
+ :description "How to sign up, post, follow people, search and send encrypted direct messages in WeJure."
  :layout :page
  :toc :ul
- :page-index 4
+ :page-index 3
  :navbar? true}
 
 This page walks through WeJure once it is running at [http://localhost:8020](http://localhost:8020). [Getting Started](../example/) explains how to get there, and [Communities](../communities/) covers the group spaces.

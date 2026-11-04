@@ -1,7 +1,8 @@
 {:title "Communities"
+ :description "WeJure's communities: private and open, channels and topics, roles and owner votes, and how they work with no server in charge."
  :layout :page
  :toc :ul
- :page-index 5
+ :page-index 4
  :navbar? true}
 
 Communities are WeJure's group spaces, laid out like [Zulip](https://zulip.com/): a community has channels, and the messages in a channel are grouped by topic. No relay is in charge of a community: each member's client works out from signed records who belongs and who may do what.

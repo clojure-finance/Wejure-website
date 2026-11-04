@@ -1,4 +1,5 @@
 {:title "Background"
+ :description "Why WeJure exists, how it works on Nostr relays and Blossom media servers, how it protects privacy, and what it cannot do yet."
  :layout :page
  :toc :ul
  :page-index 1
@@ -23,15 +24,16 @@ Social networks such as Twitter, Facebook or Instagram are centralized: a single
 - **Private communities** are encrypted end to end. Relays see neither the community nor who writes nor the topics, and removed members cannot read what comes after. [Communities](../communities/#how-communities-work) explains how.
 - **Blocking** uses a mute list (NIP-51) whose entries are encrypted to its owner, so nobody can see who blocks whom.
 - **The device cache**, the copies the browser keeps, is encrypted with a key derived from your account key and is unreadable without your password. Logging out deletes it.
-- **Your password** protects your secret key, which sits on the relays. Anyone can try to guess it offline, so choose a strong one.
+- **Your password** protects your secret key on the relays, where anyone can try to guess it offline: choose a strong one.
 - **Public data**: profiles, posts, follows, the lists of relays and media servers each account uses, and everything in open communities.
 
-## Requirements
+## Built with
 
-- [Node.js](https://nodejs.org/) 22.13 or newer, to run the server
-- [Java](https://adoptium.net/) 21 or newer, to build the ClojureScript with [shadow-cljs](https://github.com/thheller/shadow-cljs)
+- **The app:** ClojureScript, built with [shadow-cljs](https://github.com/thheller/shadow-cljs), with [Reagent](https://reagent-project.github.io/) and [MUI](https://mui.com/)
+- **The data layer:** JavaScript on [nostr-tools](https://github.com/nbd-wtf/nostr-tools)
+- **The server:** Node.js; its relay stores events in SQLite
 
-The app is built with [Reagent](https://reagent-project.github.io/) and [MUI](https://mui.com/); its data layer uses [nostr-tools](https://github.com/nbd-wtf/nostr-tools).
+[Getting Started](../example/) lists what you need to run it.
 
 ## Status and limitations
 

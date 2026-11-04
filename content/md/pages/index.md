@@ -1,4 +1,5 @@
 {:title "Welcome to WeJure"
+ :description "WeJure is a decentralized social network written in ClojureScript: a public feed and communities with channels and topics, on Nostr relays and Blossom media servers."
  :layout :page
  :page-index 0
  :navbar? true
