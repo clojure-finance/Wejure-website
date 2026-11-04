@@ -4,26 +4,27 @@
  :navbar? true
  :home? true}
 
-<p class="lead">A decentralized, peer-to-peer social network written in ClojureScript, developed at HKU Business School.</p>
+<p class="lead">A decentralized social network written in ClojureScript, developed at HKU Business School.</p>
 
-No company owns the data: posts and profiles sync between users' browsers through GunDB relays, images live on IPFS, and direct messages are end-to-end encrypted.
+WeJure combines a public feed, like Twitter, with communities that have channels and topics, like Zulip. Nobody owns the network: data travels as signed [Nostr](https://nostr.com/) events through relays, and pictures live on [Blossom](https://github.com/hzrd149/blossom) media servers, named by their hash. Any relay or media server can go down or lie, and WeJure keeps working with the others.
 
 <div class="cards">
 <a class="card" href="pages-output/docs/"><strong>Background</strong><span>Why WeJure exists and how it works.</span></a>
-<a class="card" href="pages-output/example/"><strong>Getting Started</strong><span>Install, run and open WeJure on your machine.</span></a>
+<a class="card" href="pages-output/example/"><strong>Getting Started</strong><span>Build and run WeJure on your machine.</span></a>
 <a class="card" href="pages-output/usage/"><strong>Using WeJure</strong><span>Posts, profiles, search and messages.</span></a>
+<a class="card" href="pages-output/communities/"><strong>Communities</strong><span>Channels, topics, roles, and how they stay private.</span></a>
 </div>
 
-![The WeJure start page](img/start-page.png)
+![A community in WeJure: channels, topics and messages](img/community.png)
 
 ## Features
 
-- Accounts with a profile picture and a bio
-- Posts with text, an image, or both, and a feed of the people you follow
-- Following and unfollowing users
-- Searching users by name and posts by text
+- Accounts with a username and password, a bio and an optional profile picture; logging in works from any device
+- Posts with text, a picture or both, in a feed of the people you follow that updates live
+- Following and unfollowing; finding users by name; searching the recent posts of the people you follow
 - End-to-end encrypted direct messages, and blocking users
-- Group chat with layered encryption (in the backend; no user interface yet)
+- Communities, private (encrypted, invite only) or open (public, anyone can join), with channels, topics and roles
+- Every post, message and change is signed by its author, so no server can alter or fake it
 
 ## Report bugs
 

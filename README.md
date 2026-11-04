@@ -1,6 +1,6 @@
 # WeJure Documentation Website
 
-The documentation website for [WeJure](https://github.com/clojure-finance/WeJure), a decentralized peer-to-peer social network written in ClojureScript. It is built with [Cryogen](http://cryogenweb.org).
+The documentation website for [WeJure](https://github.com/clojure-finance/WeJure), a decentralized social network on Nostr, written in ClojureScript. It is built with [Cryogen](http://cryogenweb.org).
 
 Link to website: [https://clojure-finance.github.io/Wejure-website/](https://clojure-finance.github.io/Wejure-website/)
 

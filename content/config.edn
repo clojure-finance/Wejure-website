@@ -1,6 +1,6 @@
 {:site-title                   "WeJure"
  :author                       "WeJure"
- :description                  "Documentation for WeJure, a decentralized peer-to-peer social network written in ClojureScript."
+ :description                  "Documentation for WeJure, a decentralized social network on Nostr, written in ClojureScript."
  :site-url                     "https://clojure-finance.github.io/"
  :post-root                    "posts"
  :page-root                    "pages"
