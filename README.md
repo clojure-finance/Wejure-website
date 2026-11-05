@@ -35,7 +35,7 @@ A failed build exits with status 1.
 - Link to other pages relatively, as `../usage/`, and to images as `../../img/feed.png`; from the home page (`index.md`) it is `pages-output/usage/` and `img/feed.png`.
 - Styles go in `themes/lotus/css/wejure.css`. The theme's Sass is not compiled: its `blog.css` is used as it is.
 - `themes/lotus/html/404.html` is copied as it is, without templating, so its paths start with `/Wejure-website/`.
-- The pages follow WeJure's README, its `docs/COMMUNITIES.md` and the screens' code (`src/wejure/components/`). When WeJure changes, check the pages against those.
+- The pages follow WeJure's README, its `docs/COMMUNITIES.md` and the screens' code (`src/wejure/components/`). When WeJure changes, check the pages against those. The Mobile app section of the Background page follows the README and screens (`src/wejure_app/`) of the mobile app, wejure-app.
 
 ## Screenshots
 

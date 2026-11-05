@@ -10,7 +10,7 @@
 WeJure combines a public feed, like Twitter, with communities that have channels and topics, like Zulip. Nobody owns the network: data travels as signed [Nostr](https://nostr.com/) events through relays, and pictures live on [Blossom](https://github.com/hzrd149/blossom) media servers, named by their hash. Any relay or media server can go down or lie, and WeJure keeps working with the others.
 
 <div class="cards">
-<a class="card" href="pages-output/docs/"><strong>Background</strong><span>Why WeJure exists and how it works.</span></a>
+<a class="card" href="pages-output/docs/"><strong>Background</strong><span>Why WeJure exists, how it works, and the mobile app.</span></a>
 <a class="card" href="pages-output/example/"><strong>Getting Started</strong><span>Build and run WeJure on your machine.</span></a>
 <a class="card" href="pages-output/usage/"><strong>Using WeJure</strong><span>Posts, profiles, search and messages.</span></a>
 <a class="card" href="pages-output/communities/"><strong>Communities</strong><span>Channels, topics, roles, and how they stay private.</span></a>

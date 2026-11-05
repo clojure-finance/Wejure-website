@@ -62,7 +62,7 @@ Click **Message** in the top bar to open your messages. Your contacts are everyo
 
 Messages are end-to-end encrypted: only you and your contact can read them, and relays cannot even tell who sent them.
 
-To block someone, open your conversation with them and click **Block User**. They leave your contacts, and their posts no longer show in your feed or in search results. Blocking works on your side only: they are not told, and nobody can see whom you block. It does not unfollow them, and WeJure has no way to unblock yet.
+To block someone, open your conversation with them and click **Block User**. They leave your contacts, and their posts no longer show in your feed or in search results. A feed that is open, in another tab or on another device, drops their posts at once. Blocking works on your side only: they are not told, and nobody can see whom you block. It does not unfollow them, and WeJure has no way to unblock yet.
 
 ## Limitations
 

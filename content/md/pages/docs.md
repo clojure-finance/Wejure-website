@@ -1,5 +1,5 @@
 {:title "Background"
- :description "Why WeJure exists, how it works on Nostr relays and Blossom media servers, how it protects privacy, and what it cannot do yet."
+ :description "Why WeJure exists, how it works on Nostr relays and Blossom media servers, how it protects privacy, where the mobile app stands, and what WeJure cannot do yet."
  :layout :page
  :toc :ul
  :page-index 1
@@ -29,11 +29,21 @@ Social networks such as Twitter, Facebook or Instagram are centralized: a single
 
 ## Built with
 
-- **The app:** ClojureScript, built with [shadow-cljs](https://github.com/thheller/shadow-cljs), with [Reagent](https://reagent-project.github.io/) and [MUI](https://mui.com/)
+- **The web app:** ClojureScript, built with [shadow-cljs](https://github.com/thheller/shadow-cljs), with [Reagent](https://reagent-project.github.io/) and [MUI](https://mui.com/)
 - **The data layer:** JavaScript on [nostr-tools](https://github.com/nbd-wtf/nostr-tools)
 - **The server:** Node.js; its relay stores events in SQLite
 
 [Getting Started](../example/) lists what you need to run it.
+
+## Mobile app
+
+A mobile app is in early development, also in ClojureScript: shadow-cljs and Reagent on [React Native](https://reactnative.dev/), through [Expo](https://expo.dev/). It uses the web app's data layer unchanged, so both read and write the same events, and an account works in both. So far it can:
+
+- log in with an account made in the web app;
+- show your feed, newest first, with older posts as you scroll and new ones as they are published, but no pictures yet;
+- log out.
+
+Everything else, from posting to messages and communities, still needs the web app. The mobile app has not been released yet.
 
 ## Status and limitations
 
